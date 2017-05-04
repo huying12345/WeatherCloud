@@ -1,0 +1,166 @@
+﻿     @*@using System.Data
+@using Yamon.Framework.Common
+@using Yamon.Module.SiteManage.Entity
+@using Yamon.Module.SiteManage.DAL
+@{
+    ViewBag.BodyClass = "easyui-layout";
+    ViewBag.Title = "首页";
+    VersionInfoDAL verDal = new VersionInfoDAL();
+    DataRow version = verDal.GetEntityRow("");
+}
+
+<noscript>
+    <div style="position: absolute; z-index: 100000; height: 2046px; top: 0px; left: 0px;
+            width: 100%; background: white; text-align: center;">
+        <img src="~/Static/v1/images/noscript.gif" alt='抱歉，请开启Javascript脚本支持！' />
+    </div>
+</noscript>
+<div id="loading-mask" style="">
+</div>
+<div id="loading">
+    <div class="loading-indicator">
+        <img src="~/Static/v1/images/extanim32.gif" width="32" height="32" style="margin-right: 8px;float: left; vertical-align: top;" /><br />
+        <span id="loading-msg">数据加载中...</span>
+    </div>
+</div>
+<div class="index_top" region="north" split="false" border="false" style=" height: 49px;">
+    <div class="index_head">
+        <div class="top_right">
+            <ul class="head_right">
+                <li><img src="~/Static/Home/images/shtop01.png" alt="" /><span>@CookieHelper.GetCookie("TrueName")，您好！</span></li>
+                <li><img src="~/Static/Home/images/shtop02.png" alt="" /><a href="javascript:void(0)" id="editpass"><span style="cursor:pointer;color:#FFF;">修改密码</span></a></li>
+                <li><img src="~/Static/Home/images/shtop04.png" alt="" /><span id="loginOut">退出</span></li>
+            </ul>
+        </div>
+        <div class="cl"></div>
+    </div>
+</div>
+<div id="leftRegion" region="west" title="导航菜单" split="true" border="false" style="width: 200px;
+        height: 90%;">
+    <iframe id="leftFrame" name="leftFrame" frameborder="0" scrolling="no" src="/Home/LeftMenu?ParentID=" height="100%" width="100%"></iframe>
+</div>
+
+<div id="mainPanle" region="center" style="background: #eee; overflow-y: hidden">
+    <div id="tabs" class="easyui-tabs" fit="true" border="false">
+        <div title="首页" closable="false" id="home">
+            <iframe frameborder="0" scrolling="auto" src="/Home/HomePage" style="width: 100%; height:100%;"></iframe>
+        </div>
+    </div>
+</div>
+
+<div class="flooter" region="south" split="false" id="bg">
+    <div class="floot01">
+        @(ViewBag.Config.Copyright)
+        &nbsp;&nbsp;技术支持：<a href="http://www.yamon.com.cn" target="_blank"><img src="~/Static/Home/images/yamon.png" /></a>
+        <a href="/SiteManage/Version/Index" style="color:White;" target="_blank" title="版本更新记录">
+            当前版本为:V@(version["Major"]).@(version["Minor"]).@(version["Build"]).@(version["Revision"]) Build@(DataConverter.ToDate(version["CreatedDate"]).ToString("yyyMMdd"))
+        </a>
+    </div>
+</div>
+
+<div id="mm" class="easyui-menu" style="width: 150px;">
+    <div id="mm-tabclose">
+        关闭
+    </div>
+    <div id="mm-tabcloseother">
+        除此之外全部关闭
+    </div>
+    <div class="menu-sep">
+    </div>
+    <div id="mm-tabcloseright">
+        当前页右侧全部关闭
+    </div>
+    <div id="mm-tabcloseleft">
+        当前页左侧全部关闭
+    </div>
+</div>
+
+@section styles
+    {
+    <link href="~/Static/Home/css/shcommon.css" rel="stylesheet" />
+    <style type="text/css">
+        .panel-body-noborder {
+            overflow: hidden;
+        }
+
+        .index_top {
+            background: #1a90e8 url("/@(ViewBag.Config.WebLogo)") no-repeat scroll left top;
+            border-bottom: 2px solid #40ccef;
+            height: 49px;
+            position: relative;
+        }
+    </style>
+}
+
+@section scripts
+{
+    <script src="~/Static/Home/js/Index.js"></script>
+    <script type="text/javascript">
+        function toggleMenu() {
+            if (jQuery(".layout-panel-west").css("display") == "none") {
+                jQuery('#mybody').layout('expand', 'west');
+            } else {
+                jQuery('#mybody').layout('collapse', 'west');
+            }
+        }
+
+        jQuery(function () {
+            //IndexMessages();
+        });
+
+        //消息提醒
+        function IndexMessages() {
+            var ulHtml = '';
+            jQuery.ajax({
+                type: 'post',
+                dataType: 'text',
+                url: '/InformationV2/Information/IndexMessageAction?Min=20',
+                success: function (msg) {
+                    eval("var data=" + msg);
+
+                    var datetimes = "";
+                    var height = 50;
+                    for (var i = 0; i < data.length; i++) {
+
+                        datetimes = "";
+                        datetimes = formatCSTDate(data[i].datatime.replace(/-/g, "/"), "yyyy-MM-dd hh:mm")
+
+                        if (data[i].nodetype == 3) {
+                            ulHtml += "<a style='line-height:20px;height:30px;' href='" + data[i].linkurl + "' target='_blank'>" + data[i].nodename + "【" + datetimes + "】</a>";
+                        } else {
+                            ulHtml += "<a style='line-height:20px;height:30px;' href='/SF/InformationV2/Text/Create?Menu=Information_List&NodeID=" + data[i].nodeid + "&DataTime=" + datetimes + "' target='_blank'>" + data[i].nodename + "【" + datetimes + "】</a>";
+                        }
+                        height += 30;
+                        ulHtml += '<br/>';
+                    }
+
+                    if (ulHtml != "") {
+                        //document.getElementById("pcpo").innerHTML = ulHtml;
+                        play();//弹窗响铃提醒
+
+                        showTim("产品编辑提醒", ulHtml, 400, height, 1000 * 30);
+                    }
+                },
+                error: function (error) { }
+            });
+        }
+
+        function showTim(title, msg, width, height, timenum) {
+            $.messager.show({
+                title: title,
+                msg: msg,
+                timeout: timenum,
+                width: width,
+                height: height,
+                showType: 'show'
+            });
+        }
+
+        function play() {
+            var audio = document.getElementById('music1');
+            audio.play();
+            jQuery('#tmpAreaLmtDiv').css('display', '');
+        }
+
+    </script>
+}*@

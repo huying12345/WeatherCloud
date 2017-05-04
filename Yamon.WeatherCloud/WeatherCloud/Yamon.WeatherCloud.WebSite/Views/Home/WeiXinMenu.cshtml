@@ -1,0 +1,121 @@
+﻿<style type="text/css">
+    .box-body input {
+        margin-top: 5px;
+    }
+</style>
+<div class="row">
+    <!-- left column -->
+    <div class="col-md-8">
+        <!-- general form elements -->
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Quick Example</h3>
+            </div>
+            <!-- /.box-header -->
+
+            <div class="box-body">
+                <div class="row">
+                    <!--ko foreach: button-->
+                    <ul class="col-md-4">
+                        <li data-bind="foreach:sub_button">
+                            <input type="text" class="form-control" data-bind="value:name,click: $root.setSelected" />
+                        </li>
+                        <li class="active">
+                            <input type="text" class="form-control" data-bind="value:name,click: $root.setSelected" />
+                        </li>
+                    </ul>
+                    <!--/ko-->
+                   
+                </div>
+
+            </div>
+            <!-- /.box-body -->
+
+            <div class="box-footer text-center">
+                <button class="btn btn-primary" data-bind="click:save()">提交</button>
+            </div>
+
+        </div>
+    </div>
+    <!-- /.box -->
+    <div class="col-md-4">
+        <!-- general form elements -->
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">菜单设置</h3>
+            </div>
+
+            <!--ko foreach: button-->
+
+            <div class="box-body" data-bind="visible: isSelected">
+                <div class="form-group">
+                    <label>
+                        菜单名称
+                        <input type="text" class="form-control" placeholder="菜单名称" data-bind="value: name" />
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>菜单事件</label>
+                    <select class="form-control">
+                        <option value="click" selected="selected">点击事件（传回服务器）</option>
+                        <option value="view">访问网页（直接跳转）</option>
+                        <option value="location_select">弹出地理位置选择器</option>
+                        <option value="pic_photo_or_album">弹出拍照或者相册发图</option>
+                        <option value="pic_sysphoto">弹出系统拍照发图</option>
+                        <option value="pic_weixin">弹出微信相册发图器</option>
+                        <option value="scancode_push">扫码推事件</option>
+                        <option value="scancode_waitmsg">扫码推事件且弹出“消息接收中”提示框</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>
+                        链接地址
+                        <input type="url" class="form-control" placeholder="链接地址">
+                    </label>
+                </div>
+            </div>
+
+            <!--ko foreach: sub_button-->
+            <div class="box-body" data-bind="visible: isSelected">
+                <div class="form-group">
+                    <label>
+                        菜单名称
+                        <input type="text" class="form-control" placeholder="菜单名称" data-bind="value: name" />
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>菜单事件</label>
+                    <select class="form-control">
+                        <option value="click" selected="selected">点击事件（传回服务器）</option>
+                        <option value="view">访问网页（直接跳转）</option>
+                        <option value="location_select">弹出地理位置选择器</option>
+                        <option value="pic_photo_or_album">弹出拍照或者相册发图</option>
+                        <option value="pic_sysphoto">弹出系统拍照发图</option>
+                        <option value="pic_weixin">弹出微信相册发图器</option>
+                        <option value="scancode_push">扫码推事件</option>
+                        <option value="scancode_waitmsg">扫码推事件且弹出“消息接收中”提示框</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>
+                        链接地址
+                        <input type="url" class="form-control" placeholder="链接地址">
+                    </label>
+                </div>
+            </div>
+            <!--/ko-->
+            <!--/ko-->
+           
+
+            <div class="box-footer">
+               
+            </div>
+        </div>
+    </div>
+    <!-- /.box -->
+</div>
+@section scripts{
+
+    <script src="~/Resources/JsLib/knockout/knockout.js"></script>
+    <script src="~/Static/Home/js/WeiXinMenu.js"></script>
+}

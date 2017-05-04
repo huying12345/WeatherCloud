@@ -1,0 +1,52 @@
+﻿  .noselect {
+            background-color: white;
+            background: url(../../Static/ImgPlay/Images/noselect.png) repeat;
+        }
+
+        .select {
+            color: #ffffff !important;
+            background: url(../../Static/ImgPlay/Images/select.png) repeat;
+            vertical-align: middle;
+        }
+
+            .select a {
+                color: #ffffff !important;
+            }
+
+        #district {
+            border-collapse: collapse;
+        }
+
+            #district td {
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                padding: 3px;
+            }
+
+        #imgshow {
+        }
+
+        .imageinfo {
+            padding: 0px;
+            margin-top: 12px;
+        }
+
+            .imageinfo p {
+                margin: 2px;
+            }
+
+        .headerdiv {
+            height: 35px;
+            background: #ffffff url('../../Static/ImgPlay/Images/head.png') repeat-x;
+            font-weight: bold;
+            padding: 10px 3px 5px 5px;
+        }
+
+        body {
+            color: #555555;
+        }
+        .tablediv{
+
+             height:30px;display:none
+        }

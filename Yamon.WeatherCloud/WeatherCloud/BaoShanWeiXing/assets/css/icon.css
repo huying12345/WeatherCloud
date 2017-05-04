@@ -1,0 +1,40 @@
+﻿.icon-weather-yin{
+    font-size:30px;
+}
+.icon-weather-zhenyu{
+    font-size:23px;
+}
+.icon-weather-yu{
+    font-size:18px;
+}
+.icon-weather-qing{
+    font-size: 22px;
+}
+.icon-weather-mai,.icon-weather-baoyu,.icon-weather-xiaoyuzhuanqing,.icon-weather-yejianqing{
+    font-size:25px;
+}
+.icon-weather-duoyunzhuanqing,.icon-weather-yujiaxue,.icon-weather-xiaoxue,.icon-weather-yejianduoyun{
+	font-size: 19px;
+}
+.icon-weather-xiaodaozhongyu,.icon-weather-leizhenyu{
+	font-size:21px;
+}
+.icon-weather-xiaoyuzhuanqing,.icon-weather-yejianqing,.icon-weather-qing{
+	color: yellow;
+}
+.icon-weather-zhongdaodayu,.icon-weather-shachenbao{
+	font-size:20px;
+}
+.icon-weather-yangsha{
+	font-size:24px;
+}
+.icon-weather-yintian{
+    font-size:27px;
+}
+.icon-weather-leiyu{
+	font-size: 23px;
+}
+.icon-weather-xiaoyu{
+	font-size: 19px;
+}
+

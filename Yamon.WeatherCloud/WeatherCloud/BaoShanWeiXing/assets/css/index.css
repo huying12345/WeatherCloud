@@ -1,0 +1,51 @@
+﻿
+.weui_grid_icon {
+    background-color: #89D300;
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    border-radius: 10px;
+}
+
+    .weui_grids .disable {
+        background-color: #808080 !important;
+    }
+
+.weui_grids .weui_grid_icon .iconfont {
+    font-size: 1.75rem;
+    margin-left: 0.6rem;
+    color: white;
+}
+
+h2.second-title {
+    padding-left: 15px;
+    color: #31708f;
+    font-size: 1rem;
+}
+
+h3.second-title {
+    padding-left: 25px;
+    color: #31708f;
+    font-size: 0.8rem;
+}
+
+.weui_grid {
+    padding: 10px 5px !important;
+}
+
+.weui_grid_label {
+    height: 28px;
+    line-height: 15px;
+}
+
+.show_right {
+    position: absolute;
+    right: 15px;
+    top: 47px;
+    color: #31708f;
+}
+
+.bar .icon {
+    padding-top: 0.6rem !important;
+    padding-bottom: 0px !important;
+}

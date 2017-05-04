@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - 微信公众平台 小应用 企业号 开放平台 微信支付 JSSDK Senparc.Weixin SDK</title>
+    <meta name="keywords" content="微信SDK,微信公众账号,小应用,SDK,微信公众平台,企业号,服务号,订阅号,微信支付,开放平台,Senparc.Weixin,,Senparc.Weixin.MP,JSSDK,开发者,第三方工具,说明,文档,AppStore,微微嗨,盛派网络,Senparc" />
+    <meta name="description" content="Senparc.Weixin SDK，是目前使用率最高的微信C# SDK，包含完整的公众账号、小应用（应用号）、企业号、开放平台API，帮助第三方开发者轻松实现微信公众账号和企业号开发。目前包含了Senparc.Weixin.MP（微信公众号SDK）、Senparc.Weixin.QY（微信企业号SDK）、Senparc.Weixin.Open（微信开放平台SDK），以及微信支付、微信JSSDK的完整SDK和案例。" />
+    <link href="/Static/WeiXin/css/reset.css" rel="stylesheet" />
+    <link href="/Static/WeiXin/css/style.css" rel="stylesheet" />
+    <link href="/Resources/JsLib/danktooltip/css/darktooltip.min.css" rel="stylesheet" />
+    <script src="/Resources/JsLib/jquery.min.js"></script>
+    <script src="/Resources/JsLib/danktooltip/js/jquery.darktooltip.min.js"></script>
+    @RenderSection("styles", false)
+</head>
+<body>
+    <div class="content">
+
+        @if (!IsSectionDefined("catalog"))
+        {
+            <div class="catalog">
+                <a href="/WeiXin/Menu/Index">自定义菜单设置工具</a>
+                <a href="/WeiXin/SimulateTool/Index">消息模拟工具</a>
+                <a href="/WeiXin/Cache/Test">缓存测试</a>
+            </div>
+        }
+        @RenderBody()
+
+        @RenderSection("scripts", required: false)
+    </div>
+</body>
+</html>

@@ -1,0 +1,176 @@
+﻿@{
+    ViewBag.Title="设置数据权限";
+}
+
+@section scripts{
+    <script type="text/javascript">
+        var UserID = @(RequestHelper.GetInt("UserID",0));
+        var DepartmentID = @(RequestHelper.GetInt("DepartmentID", 0));
+        var loadNodes="";
+        var ischecked = false;
+
+        jQuery(function () {
+
+            jQuery("#NodesTree").tree(
+            {
+                animate: true,
+                lines: true,
+                checkbox: true,
+                cascadeCheck: false,
+                url: "/api/Weather/WeatherNodes/EditTree",
+                animate: true,
+                onLoadSuccess: function (node, data) {
+                    jQuery("#NodesTree").tree('collapseAll');
+                    LoadWeatherNodes();
+                    //jQuery("#NodesTree").tree('expand', jQuery("#NodesTree").tree("getRoot").target);
+                },
+                onDblClick: function (node) {
+                    checkAllChild(node, ischecked ? 'uncheck' : 'check');
+                },
+                onCheck: function (node, checked) {
+                    if (checked) {
+                        var parent = $("#NodesTree").tree('getParent', node.target);
+                        if (parent) {
+                            $("#NodesTree").tree('check', parent.target);
+                        }
+                    }else{
+                        var child = $("#NodesTree").tree('getChildren', node.target);
+                        if (child) {
+                            for (var i = 0; i < child.length; i++) {
+                                $("#NodesTree").tree('uncheck', child[i].target);
+                            }
+                        }
+                    }
+                }
+            });
+
+            jQuery('#btnOK').click(function () {
+
+                jQuery.messager.confirm('保存数据权限', '您确定要保存数据权限吗?', function(r) {
+                    if (r) {
+
+                        jQuery("#btnOK").linkbutton("disable");
+                        jQuery.ajax({
+                            type: 'post',
+                            dataType: 'json',
+                            url: '/api/Weather/WeatherNodes/SetDataPurview?',
+                            data: { "UserID": UserID,"DepartmentID":DepartmentID, "NodeID": getNodesTreeChecked() },
+                            success: function (msg) {
+                                jQuery("#btnOK").linkbutton('enable');
+                                if (msg.success) {
+                                    alert("操作成功！");
+                                    parent.CloseDialog();
+                                } else {
+                                    alert("操作失败：" + msg);
+                                    return;
+                                }
+                            },
+                            error: function (error) { jQuery("#btnOK").linkbutton('enable'); }
+                        });
+
+                    }
+                });
+
+
+            });
+        });
+
+        function getNodesTreeChecked() {
+            var nodes = $('#NodesTree').tree('getChecked');
+            var s = '';
+            for (var i = 0; i < nodes.length; i++) {
+                if (s != '') s += ',';
+                s += nodes[i].id;
+            }
+            return s;
+        }
+
+
+        function expandAll(idTree) {
+            jQuery('#' + idTree).tree('expandAll');
+            return;
+        }
+
+        function collapseAll(idTree) {
+            jQuery('#' + idTree).tree('collapseAll');
+        }
+
+        function selectAll() {
+            var check = jQuery('#chkCheckAll').is(':checked') ? 'check' : 'uncheck';
+            var roots = jQuery("#NodesTree").tree('getRoots');
+            for (var i = 0; i < roots.length; i++) {
+                jQuery("#NodesTree").tree(check, roots[i].target);
+                var child = jQuery("#NodesTree").tree('getChildren', roots[i].target);
+                for (var j = 0; j < child.length; j++) {
+                    jQuery("#NodesTree").tree(check, child[j].target);
+                }
+            }
+            // jQuery("#NodesTree").tree("check", jQuery("#NodesTree").tree('getRoot'));
+        }
+
+        function checkAllChild(node, checkType) {
+            ischecked = checkType == 'check';
+            $('#NodesTree').tree(checkType, node.target);
+            var childs = $('#NodesTree').tree('getChildren', node.target);
+            for (var i = 0; i < childs.length; i++) {
+                checkAllChild(childs[i], checkType);
+            }
+        }
+
+        function LoadWeatherNodes(){
+            if(loadNodes==""){
+                jQuery.ajax({
+                    type: 'post',
+                    dataType: 'json',
+                    url: '/api/Weather/WeatherNodes/GetDataPurview?',
+                    data: { "UserID": UserID,"DepartmentID":DepartmentID },
+                    success: function (msg) {
+                        if(msg.success){
+                            loadNodes=msg.data;
+                            setLoadWeather();
+                        }
+                    },
+                    error: function (error) { }
+                });
+            }else{
+                setLoadWeather();
+            }
+        }
+
+        function setLoadWeather(){
+            var nodeLoadList=loadNodes.split(",");
+            for (var i = 0; i < nodeLoadList.length; i++) {
+                var node = $('#NodesTree').tree('find', nodeLoadList[i]);
+                $('#NodesTree').tree('check', node.target);
+            }
+        }
+    </script>
+}
+
+<div class="easyui-layout" data-options="fit:true" style="height:600px;">
+    <div id="p" data-options="region:'west'" title="任务列表" style="width:100%;padding:10px">
+        <div>
+            <a href="javascript:expandAll('NodesTree');" class="easyui-linkbutton">
+                全部展开
+            </a>
+            <a href="javascript:collapseAll('NodesTree');" class="easyui-linkbutton">
+                全部收缩
+            </a>
+            <input id="chkCheckAll" type="checkbox" value="1" onchange="selectAll()" /><label for="chkCheckAll">全选/反选</label>
+        </div>
+
+        <div class="sjjk_con" id="NodesTree">
+        </div>
+    </div>
+    <div region="south" border="false" style="text-align: right; background: #F6F6F6; height: 30px; line-height: 30px;">
+        <div>
+            <label>双击全选或取消选择子节点</label>
+            <a id="btnOK" class="easyui-linkbutton" icon="icon-ok" href="javascript:void(0)">
+                确定
+            </a>
+            <a id="btnCancel" class="easyui-linkbutton" icon="icon-cancel" href="javascript:parent.CloseDialog();">
+                取消
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+﻿body {
+    font-family:'微软雅黑';
+    width:100%;
+}
+.content{
+    overflow-x:hidden;
+    width:100%;
+}
+h1,h2,h3,h4{
+    padding-left:1%;
+}
+.my_order{
+    margin-top: -50px;
+}
+.my_order h3{
+    margin-bottom:-20px;
+    border-bottom:3px solid #D9EDF7;
+    margin-top:5px;
+}
+.orderList h3{
+    margin-top:5px;
+}
+.orderList h4{
+    padding-top:5px;
+}
+.content i{
+    background:rgb(9, 147, 199);
+    padding:8px 10px;
+    font-size:20px;
+    color:#fff;
+    border-radius:6px;
+    margin-right:5px;
+}
+.my_bottom{
+    border-bottom:3px solid #D9EDF7;
+    width:100%;
+    padding-bottom:2px;
+}
+.weui_cell{
+    padding:15px 15px;
+}
+.icon-dingyue{
+    font-size:20px;
+    color:#0993C7;    
+    padding:15px 15px;
+}
+.icon-shanchu{
+    font-size:20px;
+    padding:15px 15px;
+}

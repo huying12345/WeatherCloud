@@ -1,0 +1,51 @@
+.panel {
+            background-color: inherit;
+        }
+
+        .panel-default > .panel-heading {
+            background-color: inherit;
+            border-color: #ddd;
+            color: inherit;
+        }
+        .panel-body {
+            font: 20px "Microsoft Yahei";
+            
+        }
+        .section {
+            text-align: center;
+            font: 30px "Microsoft Yahei";
+            color: #fff;
+        }
+
+        .navbar-header .container {
+            text-align: center;
+        }
+
+        .navbar-default {
+            height: 80px;
+            background-color: #135EA1;
+            color: #fff;
+            text-shadow: #000 5px 5px 5px;
+            text-align: center;
+            font: 60px "Microsoft Yahei";
+        }
+
+        .section-content {
+            padding: 120px 40px 0px 40px;
+        }
+
+        .thumbnail {
+            background: #80CA5B;
+            height: 200px;
+            text-align: center;
+            width: 100%;
+            display: table;
+        }
+
+            .thumbnail p {
+                vertical-align: middle;
+                text-shadow: #000 5px 5px 5px;
+                display: table-cell;
+                text-align: center;
+                font-size: 20px;
+            }

@@ -1,0 +1,37 @@
+﻿<link href="~/assets/css/weather.css" rel="stylesheet" />
+<link href="~/assets/css/icon.css" rel="stylesheet" />
+<div id="weatherPanel" class="container" onclick="window.location.href= '/home2/weatherInfo'" >
+    <div class="head">
+        <ul data-bind="with:stationWeather">
+            <li>站点：<span data-bind="text:Station_Name"></span></li>
+            <li><a href="#">未来十天天气 &gt;</a></li>
+        </ul>
+    </div>
+    <div class="body">
+        <ul data-bind="with:stationWeather">
+            <li>
+                今天
+                <span class="air-quality" data-bind="style:{background:AQI<=50?'#02E300':(AQI<=100?'#FFFF00':(AQI<=150?'#FF7E00':(AQI<=200?'#FE0000':(AQI<=300?'#98004B':'#7E0123')))),color:AQI<=100?'#000':'#fff'}">
+                    <span data-bind="text:AQI"></span><span data-bind="text:Quality">优</span>
+                </span>
+            </li>
+            <li>
+                <span data-bind="text:TEM+'°'"></span>/
+                    <sup data-bind="text:TMax+'°'">15°</sup>
+                    <sub data-bind="text:TMin+'°'">9°</sub>
+            </li>
+            <li>
+                <span data-bind="text:'降水量'+PRE+'mm'">100mm</span>&nbsp;·&nbsp;<span data-bind="text:WIN_D_Avg_1mi">西南风</span><span data-bind="text:WIN_S_Avg_1mi">1</span>
+            </li>
+         </ul>
+        <ul data-bind="foreach:tomorrowWeather">
+            <li>明天&nbsp;<span data-bind="text:weak"></span></li>
+            <li>
+                <i data-bind="attr:{class:'iconfont icon-weather-'+WeatherA_PY}"></i>
+                <sup data-bind="text:TMax+'°'">20°</sup>
+                <sub data-bind="text:TMin+'°'">10°</sub>
+            </li>
+            <li data-bind="text:WeatherA">晴</li>
+        </ul>
+    </div>
+</div>

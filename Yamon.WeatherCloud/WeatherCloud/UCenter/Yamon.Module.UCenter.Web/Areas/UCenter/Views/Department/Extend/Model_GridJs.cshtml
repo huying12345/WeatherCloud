@@ -1,0 +1,42 @@
+﻿<script>
+    function SyncDepartment() {
+        //$("#74df7275-851f-466f-a583-a26b869c8247").attr('disabled', "true");
+        $.ajax({
+            url: "/api/UCenter/Department/SyncOfWeiXin",
+            type: "POST",
+            dataType: 'json',
+            success: function (data, textStatus, jqXHR) {
+                ReloadData();
+                //$("#74df7275-851f-466f-a583-a26b869c8247").removeAttr("disabled");
+                alert(data.message);
+            },
+            error: function (error) {
+                //$("#74df7275-851f-466f-a583-a26b869c8247").removeAttr("disabled");
+            }
+        });
+    }
+
+ 
+    function SyncDBWeiXin() {
+     //   $("#c8cb44fe-81ff-468c-a265-95835072bac8").attr('disabled', "true");
+      $.ajax({
+          url: "/api/UCenter/Department/SyncDBWeiXin",
+          type: "POST",
+          dataType: 'json',
+          success: function (data, textStatus, jqXHR) {
+              ReloadData();
+             // $("#c8cb44fe-81ff-468c-a265-95835072bac8").attr("disabled", "disabled");
+              alert(data.message);
+          },
+          error: function (error) {
+              //$("#c8cb44fe-81ff-468c-a265-95835072bac8").attr("disabled", "disabled");
+          }
+      });
+  }
+
+function  SetDataPurview(value, row, index) {
+    var url = "/Weather/WeatherNodes/SetDataPurview?DepartmentID=" + row.DepartmentID;
+    url='javascript:OpenMyDialog("'+url+'", "设置数据权限", 500, 500);';
+    return "<a href='" + url + "' style='color:red;'>数据权限</a>";
+}
+</script>  

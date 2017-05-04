@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "导航";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<div class="weui_grids tab-content" data-bind='foreach: lines'>
+    <div role="tabpanel" class="tab-pane active" data-bind="attr: {id:'menu'+NodeID },foreach: children">
+        <div>
+            <div><h4 data-bind="text:NodeName"></h4></div>
+            <div data-bind='foreach: children'>
+                <a data-bind="attr: {href:hrefs }" class="weui_grid js_grid" data-id="button">
+                    <div class="weui_grid_icon">
+                        <img src="~/Static/ImgPlay/Images/head.png" alt="">
+                    </div>
+                    <p class="weui_grid_label" data-bind="text:NodeName">
+
+                    </p>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+ 
+
+</div>*@
+<div class="tab-content panel panel-info" style="border:0px; ">
+    <div class=" panel-heading" style="border:0px;border-bottom:3px solid #D9EDF7 !important; background-color:#fff">
+        <h3  style="font-size:3.5vh">我的收藏</h3>
+    </div>
+    <div id="mydy">
+        <dl >         
+            <dt style="background-color:#89D300;border-radius:10px; margin-top:10px; width:3rem;height:3rem;line-height:3rem" onclick="location.href = '/Home/Station?Type=Img&NodeName=宝山自动站实况&ParentID=8&MenuID=112#NodeID=113'">
+                <a href="/Home/Station?Type=Img&NodeName=宝山自动站实况&ParentID=8&MenuID=112#NodeID=113"><span class="iconfonts" style="color:#fff;font-size:5vh;">&#xe60e</span></a>
+            </dt>
+            <dd>
+                <a style="font-size:0.75rem" href="/Home/Station?Type=Img&NodeName=宝山自动站实况&ParentID=8&MenuID=112#NodeID=113">气温 </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt style="background-color:#FF7356;border-radius:10px; width:3rem;height:3rem;line-height:3rem" onclick="location.href = '/Home/TyphoonLine?Type=TyphoonLine&NodeName=台风预报&ParentID=151&MenuID=188'">
+                <a href="/Home/TyphoonLine?Type=TyphoonLine&NodeName=台风预报&ParentID=151&MenuID=188"><span class="iconfonts" style="color:#fff;font-size:5vh;">&#xe60a</span></a>
+            </dt>
+            <dd>
+                <a style="font-size:0.75rem" href="/Home/TyphoonLine?Type=TyphoonLine&NodeName=台风预报&ParentID=151&MenuID=188">台风路径图 </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt style="background-color:#05D276;border-radius:10px; width:3rem;height:3rem;line-height:3rem" onclick="location.href = '/Home/Text?Type=Text&NodeName=短中期预报&ParentID=190&MenuID=191'">
+                <a href="/Home/Text?Type=Text&NodeName=短中期预报&ParentID=190&MenuID=191">
+                    <span class="iconfonts" style="color:#fff;font-size:5vh;">&#xe609</span>
+                </a>
+            </dt>
+            <dd>
+                <a style="font-size:0.75rem" href="/Home/Text?Type=Text&NodeName=短中期预报&ParentID=190&MenuID=191">气象报告 </a>
+            </dd>
+        </dl>
+    
+    </div>
+</div>
+<div class="tab-content panel panel-info" data-bind='foreach: lines' style="border:0px;">
+
+    <div class=" panel-heading" style="border:0px;border-bottom:3px solid #D9EDF7 !important; background:none;float:left;width:100%;">
+        <h3  data-bind="text:NodeName,attr:{id:'first-'+NodeID}" style="font-size:3.5vh; "></h3>
+</div>
+    <div data-bind="attr: {id:'menu'+NodeID },foreach: children" class="panel-title">
+        <div>
+            <h3 data-bind="text:NodeName" style="font-size:3vh;float:left;width:100%;"></h3>
+            <div data-bind="if: isn=='1'">
+                <div data-bind='foreach: children' id="mydy2" >
+                    <span data-bind="if: isn=='1'">
+                        <h3 data-bind="text:NodeName" style="font-size:2.7vh;border:0px;border-bottom:3px solid #D9EDF7 !important;padding:5px;float:left;width:100%;"></h3>
+                        <div data-bind='foreach: children'>
+                            <dl style="width:4.3rem;float:left;height:3.5rem; padding:5px 0;">
+                                <dt data-bind="attr: {style:'background-color:'+color+';border-radius:10px; width:3rem;height:3rem;line-height:3rem'}"><a data-bind="attr: {href:hrefs }"><span class="iconfonts" style="color:#fff;font-size:5vh;" data-bind="html:icons"></span></a></dt>
+                                <dd>
+                                    <a data-bind="attr: {href:hrefs },text:NodeName" style="font-size:0.75rem;width:25px;word-wrap:break-word;line-height:17px;"> </a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </span>
+
+                    <span data-bind="if: isn=='0'">
+                        <dl style="width:4.3rem;float:left;height:3.8rem; padding:10px 0;">
+                            <dt data-bind="attr: {style:'background-color:'+color+';border-radius:10px; width:3rem;height:3rem;line-height:3rem'}"><a data-bind="attr: {href:hrefs }"><span class="iconfonts" style="color:#fff;font-size:5vh;" data-bind="html:icons"></span></a></dt>
+                            <dd>
+                                <a data-bind="attr: {href:hrefs },text:NodeName" style="font-size:0.75rem;width:25px;word-wrap:break-word;line-height:17px"> </a>
+                            </dd>
+                        </dl>
+                    </span>
+
+
+                </div>
+            </div>
+            <span data-bind="if: isn=='0'">
+                <dl data-bind="if: isn=='0'" style="width:4.3rem;float:left;height:3rem; ">
+                    <dt data-bind="attr: {style:'background-color:'+color+';border-radius:10px; width:5rem;height:5rem;line-height:5rem'}"><a data-bind="attr: {href:hrefs }"><span class="iconfonts" style="color:#fff;font-size:5vh;" data-bind="html:icons"></span></a></dt>
+                    <dd>
+                        <a data-bind="attr: {href:hrefs },text:NodeName" style="font-size:0.75rem;width:25px;word-wrap:break-word;line-height:23px"> </a>
+                    </dd>
+                </dl>
+            </span>
+        </div>
+    </div>
+</div>
+  

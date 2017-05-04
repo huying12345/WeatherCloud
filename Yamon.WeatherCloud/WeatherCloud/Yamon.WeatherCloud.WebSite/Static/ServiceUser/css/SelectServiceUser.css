@@ -1,0 +1,32 @@
+﻿.ir {
+    display: block;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+#div_ul ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+    #div_ul ul li {
+        float: left;
+        border: 1px solid #95B8E7;
+        margin: 5px;
+        margin-top: 12px;
+        margin-bottom: 15px;
+        background-color: #DEE9FF;
+        padding-right: 20px;
+        padding-left: 5px;
+        position: relative;
+    }
+
+#div_ul li {
+    text-align: left;
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}

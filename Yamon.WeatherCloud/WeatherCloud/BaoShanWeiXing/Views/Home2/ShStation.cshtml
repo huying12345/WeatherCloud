@@ -1,0 +1,60 @@
+﻿
+<div id="stationDiv" style="margin-top:-50px">
+    <table cellpadding="0" cellspacing="0"  class="station-table">
+        <tr>
+            <td class="selecttabicon" id="station-temp" align="center" name="1"><a>气温</a></td>
+            <td class="selecttabicon " id="station-pressure" align="center" name="1"><a>气压</a></td>
+            <td class="selecttabicon " id="station-rain" align="center" name="1"><a>雨量</a></td>
+            <td class="selecttabicon " id="station-wind" align="center" name="1"><a>相对湿度风</a></td>
+            <td class="selecttabicon " id="station-njd" align="center" name="1"><a>能见度</a></td>
+        </tr>
+    </table>
+    <p  id="nolist">暂无数据</p>
+    <div id="world-map"></div>
+    <table class="table table-striped " id="station-tables">
+        <thead>
+            <tr>
+                <th class="stationName">站点</th>
+                <th class="station-temp">瞬时气温</th>
+                <th class="station-temp">今日最低温</th>
+                <th class="station-temp">今日最高温</th>
+                <th class="station-wind" >1h最大风速</th>
+                <th class="station-wind" >3h最大风速</th>
+                <th class="station-wind" >6h最大风速</th>
+                <th class="station-wind" >24h最大风速</th>
+                <th class="station-rain" >1h累计雨量</th>
+                <th class="station-rain" >3h累计雨量</th>
+                <th class="station-rain" >6h累计雨量</th>
+                <th class="station-rain" >24h累计雨量</th>
+            </tr>
+        </thead>
+        <tbody id="stationlist">
+            <!--ko foreach: stationListArray-->
+            <tr data-bind="attr:{id:Station_Id_C}">
+                <td class="stationName" data-bind="text:Station_Name"></td>
+                <td class="station-temp" data-bind="text:TEM">瞬时气温</td>
+                <td class="station-temp" data-bind="text:Math.round(MIN_TEM_Min*10)/10">今日最低温</td>
+                <td class="station-temp" data-bind="text:Math.round(MAX_TEM_Max*10)/10">今日最高温</td>
+            </tr>
+            <!--/ko-->
+            <!--ko foreach: stationWindArray-->
+            <tr data-bind="attr:{id:Station_Id_C}">
+                <td class="stationName" data-bind="text:Station_Name"></td>
+                <td class="station-wind" data-bind="text:MAX_WIN_S_Avg_2mi">1h最大风速</td>
+                <td class="station-wind" data-bind="text:MAX_WIN_S_Avg_2mi_3h">3h最大风速</td>
+                <td class="station-wind" data-bind="text:MAX_WIN_S_Avg_2mi_6h">6h最大风速</td>
+                <td class="station-wind" data-bind="text:MAX_WIN_S_Avg_2mi_24h">24h最大风速</td>
+            </tr>
+             <!--/ko-->
+            <!--ko foreach: stationRainArray-->
+            <tr data-bind="attr:{id:Station_Id_C}">
+                <td class="stationName" data-bind="text:Station_Name"></td>
+                <td class="station-rain" data-bind="text:SUM_PRE_1h">1h累计雨量</td>
+                <td class="station-rain" data-bind="text:SUM_PRE_3h">3h累计雨量</td>
+                <td class="station-rain" data-bind="text:SUM_PRE_6h">6h累计雨量</td>
+                <td class="station-rain" data-bind="text:SUM_PRE_24h">24h累计雨量</td>
+            </tr>
+            <!--/ko-->
+       </tbody>
+    </table>
+</div>

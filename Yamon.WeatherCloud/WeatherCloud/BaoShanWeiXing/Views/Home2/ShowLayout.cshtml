@@ -1,0 +1,162 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>宝山气象</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=10.0; minimum-scale=1.0;" />
+    <meta name="description" content="">
+    <link href="~/assets/libs/weui/weui.min.css" rel="stylesheet" />
+    <link href="~/assets/libs/jquery-weui/jquery-weui.css" rel="stylesheet" />
+    <link href="~/assets/css/base.css" rel="stylesheet" />
+    <link href="~/Static/jquery-weui-build/css/swiper-3.4.0.min.css" rel="stylesheet" />
+    <link href="~/assets/css/show.css" rel="stylesheet" />
+    <link href="~/assets/font/iconfont.css" rel="stylesheet" />
+    @RenderSection("styles", required: false)
+    <script type="text/javascript">
+        var myPage = {};
+        myPage.action = '@(ViewContext.RouteData.Values["action"].ToString())';
+        myPage.controller = '@(ViewContext.RouteData.Values["controller"].ToString())';
+        myPage.id = '@(ViewContext.RouteData.Values["id"])';
+        myPage.NodeType = @(ViewBag.NodeType);
+    </script>
+</head>
+
+<body ontouchstart>
+    <div class="weui_tab">
+        <div class="weui_tab_bd">
+            <header class="bar bar-nav">
+                <h1 class="title" id="title">导航2</h1>
+                <a class="icon pull-left" href="/home2/index">
+                    <i class="iconfont icon-home"></i>
+                </a>
+                <a id="Show_change" class=" open-popup icon pull-right" href="javascript:;">
+                    <i class="iconfont icon-liebiao"></i>
+                </a>
+            </header>
+            <div id="showDiv">
+                <div class="Show_table">
+                    <ul data-bind="foreach:parentNodes">
+                        <li>
+                            <a data-bind="click:$parent.nodeClick">
+                                <span data-bind="text:NodeName"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="swiper-container show_show">
+                    <div class="swiper-wrapper" data-bind="foreach:brotherNodes">
+                        <div class="swiper-slide" data-bind="attr:{ nodeId:NodeID},click:$parent.nodeClick">
+                            <a data-bind="" class="a_swiper">
+                                <span data-bind="text:NodeName"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="show_box">
+                    <div class="weui_tab_bd">
+                        <div id="tab1" class="weui_tab_bd_item weui_tab_bd_item_active">
+                            @RenderBody()
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @RenderSection("extend", required: false)
+        </div>
+        <div class="weui_tabbar">
+            <a class="weui_tabbar_item " href="/home2/index?ParentID=8">
+                <div class="weui_tabbar_icon">
+                    <i class="iconfont icon-leida"></i>
+                </div>
+                <p class="weui_tabbar_label">天气监测</p>
+            </a>
+            <a class="weui_tabbar_item " href="/home2/index?ParentID=151">
+                <div class="weui_tabbar_icon">
+                    <i class="iconfont icon-tianqiyubao"></i>
+                </div>
+                <p class="weui_tabbar_label">数值预报</p>
+            </a>
+            <a class="weui_tabbar_item" href="/home2/index?ParentID=190">
+                <div class="weui_tabbar_icon">
+                    <i class="iconfont icon-tongbaoyujing"></i>
+                </div>
+                <p class="weui_tabbar_label">指导预报</p>
+            </a>
+            <a class="weui_tabbar_item" href="/home2/index?ParentID=196">
+                <div class="weui_tabbar_icon">
+                    <i class="iconfont icon-iconboat"></i>
+                </div>
+                <p class="weui_tabbar_label">邮轮气象</p>
+            </a>
+        </div>
+    </div>
+
+    <script src="~/assets/libs/jquery/jquery.min.js"></script>
+    <script src="/assets/libs/fastclick/fastclick.js"></script>
+    <script src="~/assets/libs/knockout/knockout.js"></script>
+    <script src="~/assets/js/base.js"></script>
+    <script>
+        var userId = @(Yamon.Framework.Common.CookieHelper.GetCookieInt("UserID"));
+        $(function () {
+            FastClick.attach(document.body);
+        });
+    </script>
+    <script src="/assets/libs/jquery-weui/jquery-weui.js"></script>
+    <script src="~/Static/jquery-weui-build/js/swiper.min.js"></script>
+    <script src="~/assets/js/myjs.js"></script>
+    <script src="~/assets/js/show.js"></script>
+
+    <script src="~/Static/ImgPlay/js/imageshow.js"></script>
+    <script src="~/Static/ImgPlay/js/tabicon.js"></script>
+    <script src="~/Static/ImgPlay/js/touchswipe.js"></script>
+
+    <script>
+        var index=0;
+        if(sessionStorage.getItem("index")){
+            index=sessionStorage.getItem("index");
+        }
+        var swiper = new Swiper('.show_show', {
+            freeModeMomentumRatio: .5,
+            paginationClickable: true,
+            freeMode: true,
+            freeModeSticky: true,
+            slidesPerView: 'auto',
+            longSwipesRatio: 0.3,
+            touchRatio: 1,
+            observer: true,
+            observeParents: true,
+            initialSlide:4,
+        });
+        var showView;
+        $(function () {
+            showView = new ShowNodeViewModel();
+            showView.init(myPage.id);
+            ko.applyBindings(showView, document.getElementById("showDiv"));
+        });
+
+        document.onreadystatechange = function () {
+            if (document.readyState == "complete") {
+                var len = $('.swiper-slide').length;
+                var lentext = $('.swiper-slide span').text().length;
+                if (len <= 3) {
+                    $('.swiper-slide').css("width", 100/len+"%");
+                }
+            }
+        }
+        $(window).load(function(){
+            $(".a_swiper").bind("click",function(){
+                var index2 = $(".swiper-wrapper div a").index($(this));
+                sessionStorage.setItem("index",index2);
+            })
+        });
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

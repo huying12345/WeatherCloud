@@ -1,0 +1,41 @@
+﻿.body {
+    background-color: #2094E9;
+}
+
+.section {
+    text-align: center;
+    font: 50px "Microsoft Yahei";
+    color: #fff;
+}
+
+.thumbnail {
+    background: #80CA5B;
+    height: 200px;
+    text-align: center;
+    width: 100%;
+    display: table;
+}
+
+    .thumbnail p {
+        vertical-align: middle;
+        text-shadow: #000 5px 5px 5px;
+        display: table-cell;
+        text-align: center;
+    }
+
+.navbar-header .container {
+    text-align: center;
+}
+
+.navbar-default {
+    height: 100px;
+    background-color: #135EA1;
+    color: #fff;
+    text-shadow: #000 5px 5px 5px;
+    text-align: center;
+    font: 70px "Microsoft Yahei";
+}
+
+.section-content {
+    padding: 120px 40px 0px 40px;
+}

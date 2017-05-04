@@ -1,0 +1,7 @@
+Cimiss上海气象微信企业号 申请帐户信息
+
+10.228.89.55/cimissapiweb
+用户名：shbsqxj
+密码：58362
+Api账号：BCSH_SMC_SHBSQXJ
+密码：58362 

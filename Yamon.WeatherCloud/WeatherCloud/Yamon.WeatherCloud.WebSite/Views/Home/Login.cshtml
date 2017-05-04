@@ -1,0 +1,37 @@
+﻿@using Yamon.Module.SiteManage.DAL
+@{
+    Layout = "~/Views/Shared/_SimpleLayout.cshtml";
+
+}
+@section styles{
+    <link href="~/Static/Home/css/login.css" rel="stylesheet" />
+    <style type="text/css">
+        body {
+            width:100%;
+            background: url("@(ViewBag.Config.SiteLogo)") no-repeat left top;
+            background-size:100% 100%;
+            background-attachment: fixed;
+            overflow:hidden;
+        }
+    </style>
+}
+<div class="LoginBg">
+    <div class="LoginTit">
+        <img src="/Static/Home/images/logoTopImg.png" alt="用户登录" />
+    </div>
+    <ul class="LoginCon">
+        <li class="User"><input type="text" id="txtName" name="txtName" value="" /></li>
+        <li class="Password"><input type="password" id="txtPwd" name="txtPwd" value="" /></li>
+        <li class="Login"><input type="submit" name="" id="btn_login" value="" class="mainbut01" /></li>
+    </ul>
+</div>
+
+@section scripts{
+    <script src="~/Static/Home/js/Login.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var viewModel = new loginViewModel();
+            viewModel.init();
+        });
+    </script>
+}

@@ -1,0 +1,110 @@
+body, html {
+  height: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.bar-nav {
+    top: 0;
+}
+.bar {
+    backface-visibility: hidden;
+    background-color: #0993c7;
+    color: #fff;
+    height: 2.2rem;
+    left: 0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    position: relative;
+    right: 0;
+    z-index: 10;
+}
+.weui_tabbar::before {
+    border-top: 1px solid #979797;
+    color: #979797;
+    content: " ";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: scaleY(0.5);
+    transform-origin: 0 0 0;
+    width: 100%;
+}
+.title {
+    color: #fff;
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 2.2rem;
+    margin: 0 -0.5rem;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    white-space: nowrap;
+    width: 100%;
+}
+.sst-wode::before {
+    content: "1";
+}
+.pull-right i, .pull-left i {
+    font-size: 1.2rem;
+}
+.sstfont {
+    -webkit-text-stroke-width: 0.2px;
+    font-family: "sstfont" !important;
+    font-size: 16px;
+    font-style: normal;
+}
+.bar .icon {
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    padding: 0.6rem 0.1rem;
+    position: relative;
+    z-index: 20;
+}
+.pull-right {
+    float: right;
+}.pull-left {
+    float: left;
+}
+a {
+    color: #000;
+    text-decoration: none;
+}
+a {
+    text-decoration: none;
+}
+.weui_tabbar {
+    position: fixed;
+    z-index: 2;
+}
+.weui_tabbar {
+    background-color: #f7f7fa;
+    bottom: 0;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    z-index: 500;
+}
+.demos-title {
+  text-align: center;
+  font-size: 34px;
+  color: #3cc51f;
+  font-weight: 400;
+  margin: 0 15%;
+}
+
+.content {
+    padding-bottom: 55px;
+    padding-top: 2.2rem;
+}
+
+.weui_tabbar .weui_tabbar_item .weui_tabbar_icon{
+    color: #1296db;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+}
+.weui_tabbar_icon i {
+    font-size:1.1rem;
+}

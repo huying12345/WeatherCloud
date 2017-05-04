@@ -1,0 +1,131 @@
+﻿@{
+    ViewBag.Title = "雷达卫星";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+@section styles{
+    <link href="~/Static/ImgPlay/css/style.css" rel="stylesheet" />
+    <style>
+        .noselect {
+            background-color: white;
+            background: url(../../Static/ImgPlay/Images/noselect.png) repeat;
+        }
+
+       .select {
+        color: #ffffff !important;
+        background: url(../../Static/ImgPlay/Images/select.png) repeat;
+        vertical-align: middle;
+    }
+      .select a{
+        color: #ffffff !important;
+       
+    }
+
+        #district {
+            border-collapse: collapse;
+        }
+
+            #district td {
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                padding: 3px;
+            }
+
+        #imgshow {
+        }
+
+        .imageinfo {
+            padding: 0px;
+            margin-top: 12px;
+        }
+
+            .imageinfo p {
+                margin: 2px;
+            }
+
+        .headerdiv {
+            height: 35px;
+            background: #ffffff url('../../Static/ImgPlay/Images/head.png') repeat-x;
+            font-weight: bold;
+            padding: 10px 3px 5px 5px;
+        }
+
+        body {
+            color: #555555;
+        }
+    </style>
+
+}
+@section scripts{
+    <script type="text/javascript">
+        jQuery(function () {
+    
+            $(".select,.noselect").bind("click", changeSelect);
+
+        })
+
+        function changeSelect() {
+            jQuery(".imageinfo-hide").hide()
+        $(".select").removeClass("select").addClass("noselect");
+        $(this).addClass("select");
+    
+        var str = $(this).attr("vars")
+        $("#imageinfo-" + str).show().slibings().hide();
+  
+    }
+
+
+
+    </script>
+
+}
+
+
+
+
+<div style="background-color: #ffffff;  ">
+    <div class="headerdiv">
+        <table>
+            <tr>
+
+                <td>
+                    <div style="margin-left:4px;color:#4b6594;">宝山气象台<span id="fbsj" class="fbsj">2016年10月18日06时</span></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="width:100%; height:1px;"></div>
+
+    <table class="navs" cellpadding="0" cellspacing="0" style=" height:30px;display:none" id="tablediv">
+
+        <tr data-bind='foreach: lines3' class="line">
+            <td class="selecttabicon col-xs-1" style=" vertical-align:middle;border:2px solid #DDDDDD" align="center" name="1"><a data-bind="text:NodeName,attr:{class:NodeID }"></a></td>
+
+
+
+        </tr>
+
+    </table>
+
+
+    <div class="navs" style=" border:1px solid #fff;display:none" id="uldiv">
+        <ul class="line" data-bind='foreach: lines3'>
+            <li class="selecttabicon " style=" vertical-align:middle;border:1px solid #DDDDDD" align="center" name="1" data-bind="attr:{id:NodeID }"><a data-bind="text:NodeName,attr:{class:NodeID }"></a></li>
+        </ul>
+    </div>
+
+    <div style="padding-left:12px; padding-right:12px; padding-top:8px;text-align:center;width:100%;">
+       
+        <div style="  margin-top:12px;background-color:#f4f4f4;  padding:8px;text-align:left;min-height:300px;">
+            <div id="imageinfo-select" class="imageinfo-hide">
+                <div style="margin-left:10px; margin-right:10px"><p style="line-height:26px; font-family:宋体"> 宝山区气象台2016年10月18日06时发布的宝山区天气预报： 阴到多云，局部地区有零星小雨，今天傍晚到明天阴到多云有短时小雨。东北到东风3-4级。今天最高温度24度，明天最低温度20度。今天相对湿度60%-95%。 今天上下班期间天气预报：上班（7时-9时）多云，东北风3-4级，20~22度；下班（17时-19时）小雨，东北风3-4级，23~22度。</p></div>
+            </div>
+            <div id="imageinfo-noselect" style="display:none;" class="imageinfo-hide">
+                <div style="margin-left:10px; margin-right:10px"><p style="line-height:26px; font-family:宋体">卫星云图</p></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

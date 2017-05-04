@@ -1,0 +1,826 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\Administrator\Desktop\bswx2016120602</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="assets/css/base.css">
+      <publishTime>11/24/2016 17:36:43</publishTime>
+    </File>
+    <File Include="assets/css/icon.css">
+      <publishTime>11/22/2016 09:27:38</publishTime>
+    </File>
+    <File Include="assets/css/index.css">
+      <publishTime>12/06/2016 09:26:12</publishTime>
+    </File>
+    <File Include="assets/css/index2.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/css/show.css">
+      <publishTime>11/11/2016 16:24:45</publishTime>
+    </File>
+    <File Include="assets/css/Station.css">
+      <publishTime>11/23/2016 11:33:48</publishTime>
+    </File>
+    <File Include="assets/css/StationPM.css">
+      <publishTime>11/10/2016 09:25:39</publishTime>
+    </File>
+    <File Include="assets/css/style.css">
+      <publishTime>11/11/2016 16:24:45</publishTime>
+    </File>
+    <File Include="assets/css/weather.css">
+      <publishTime>11/28/2016 10:46:13</publishTime>
+    </File>
+    <File Include="assets/css/weatherInfo.css">
+      <publishTime>11/28/2016 11:04:36</publishTime>
+    </File>
+    <File Include="assets/font/demo.css">
+      <publishTime>11/11/2016 17:45:23</publishTime>
+    </File>
+    <File Include="assets/font/iconfont.css">
+      <publishTime>11/22/2016 09:19:51</publishTime>
+    </File>
+    <File Include="assets/font/iconfont.eot">
+      <publishTime>11/22/2016 09:19:51</publishTime>
+    </File>
+    <File Include="assets/font/iconfont.js">
+      <publishTime>11/11/2016 17:45:23</publishTime>
+    </File>
+    <File Include="assets/font/iconfont.svg">
+      <publishTime>11/22/2016 09:19:51</publishTime>
+    </File>
+    <File Include="assets/font/iconfont.ttf">
+      <publishTime>11/22/2016 09:19:52</publishTime>
+    </File>
+    <File Include="assets/font/iconfont.woff">
+      <publishTime>11/22/2016 09:19:52</publishTime>
+    </File>
+    <File Include="assets/images/bg2.jpg">
+      <publishTime>11/14/2016 16:39:12</publishTime>
+    </File>
+    <File Include="assets/images/icon_nav_actionSheet.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/icon_nav_article.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/icon_nav_button.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/icon_nav_calendar.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/icon_nav_cell.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/icon_nav_city.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/icon_nav_datetime.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/icon_nav_dialog.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/icon_nav_icons.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/icon_nav_msg.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/icon_nav_noti.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/icon_nav_panel.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/icon_nav_photo.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/icon_nav_picker.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/icon_nav_progress.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/icon_nav_ptr.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/icon_nav_search_bar.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/icon_nav_select.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/icon_nav_swiper.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/icon_nav_tab.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/icon_nav_toast.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/icon_nav_up.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/pic_article.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/present.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/swiper-1.jpg">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/swiper-2.jpg">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/swiper-3.jpg">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/swiper-4.jpg">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/images/vcode.jpg">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/js/base.js">
+      <publishTime>12/06/2016 15:12:33</publishTime>
+    </File>
+    <File Include="assets/js/bsstation.js">
+      <publishTime>11/22/2016 17:32:15</publishTime>
+    </File>
+    <File Include="assets/js/bsstationPM.js">
+      <publishTime>11/10/2016 15:29:22</publishTime>
+    </File>
+    <File Include="assets/js/myjs.js">
+      <publishTime>12/06/2016 10:04:58</publishTime>
+    </File>
+    <File Include="assets/js/show.js">
+      <publishTime>11/28/2016 11:31:02</publishTime>
+    </File>
+    <File Include="assets/js/shstation.js">
+      <publishTime>12/06/2016 16:46:34</publishTime>
+    </File>
+    <File Include="assets/js/weatherInfo.js">
+      <publishTime>12/06/2016 15:51:54</publishTime>
+    </File>
+    <File Include="assets/libs/fastclick/fastclick.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/libs/jquery-weui/jquery-weui.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/libs/jquery-weui/jquery-weui.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/libs/jquery-weui/jquery-weui.min.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/libs/jquery-weui/jquery-weui.min.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/libs/jquery/jquery.min.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/libs/knockout/knockout.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/libs/knockout/knockout.validation.min.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/libs/swiper/swiper.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/libs/swiper/swiper.min.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/libs/weui/weui.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/libs/weui/weui.min.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="assets/libs/zepto/zepto.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="bin/Aspose.Words.dll">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="bin/BaoShanWeiXing.dll">
+      <publishTime>12/06/2016 17:36:34</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>11/09/2016 14:47:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Mvc.FixedDisplayModes.dll">
+      <publishTime>11/09/2016 14:47:34</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>11/09/2016 14:47:34</publishTime>
+    </File>
+    <File Include="bin/RazorGenerator.Mvc.dll">
+      <publishTime>11/09/2016 14:47:34</publishTime>
+    </File>
+    <File Include="bin/Senparc.Weixin.dll">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="bin/Senparc.Weixin.MP.dll">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="bin/Senparc.Weixin.MP.MvcExtension.dll">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="bin/Senparc.Weixin.Open.dll">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="bin/Senparc.Weixin.QY.dll">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.dll">
+      <publishTime>07/09/2013 11:04:48</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>11/09/2016 14:47:34</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.WebRequest.dll">
+      <publishTime>07/09/2013 11:04:48</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>11/09/2016 14:47:34</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>11/09/2016 14:47:34</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>11/09/2016 14:47:34</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>11/09/2016 14:47:34</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>11/09/2016 14:47:34</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>11/09/2016 14:47:34</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>11/09/2016 14:47:34</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>11/09/2016 14:47:34</publishTime>
+    </File>
+    <File Include="bin/WebActivatorEx.dll">
+      <publishTime>11/09/2016 14:47:34</publishTime>
+    </File>
+    <File Include="bin/Yamon.Framework.Common.dll">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="bin/Yamon.Framework.DAL.dll">
+      <publishTime>11/21/2016 09:15:07</publishTime>
+    </File>
+    <File Include="bin/Yamon.Framework.DBUtility.dll">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="bin/Yamon.Framework.DBUtility.SqlServer.dll">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="bin/Yamon.Framework.Log4Net.dll">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="bin/Yamon.Framework.MVC.dll">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="bin/Yamon.Framework.Words.dll">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="bin/Yamon.Module.Common.dll">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="bin/Yamon.Module.OnePublish.DAL.dll">
+      <publishTime>12/05/2016 17:06:34</publishTime>
+    </File>
+    <File Include="bin/Yamon.Module.OnePublish.Entity.dll">
+      <publishTime>12/05/2016 17:06:34</publishTime>
+    </File>
+    <File Include="bin/Yamon.Module.SiteManage.DAL.dll">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="bin/Yamon.Module.SiteManage.Entity.dll">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="bin/Yamon.Module.Typhoon.DAL.dll">
+      <publishTime>12/06/2016 10:12:24</publishTime>
+    </File>
+    <File Include="bin/Yamon.Module.Typhoon.Entity.dll">
+      <publishTime>12/06/2016 10:12:22</publishTime>
+    </File>
+    <File Include="bin/Yamon.Module.Typhoon.WebApi.dll">
+      <publishTime>12/06/2016 10:12:26</publishTime>
+    </File>
+    <File Include="bin/Yamon.Module.UCenter.DAL.dll">
+      <publishTime>12/06/2016 10:12:24</publishTime>
+    </File>
+    <File Include="bin/Yamon.Module.UCenter.Entity.dll">
+      <publishTime>12/06/2016 10:12:22</publishTime>
+    </File>
+    <File Include="bin/Yamon.Module.Weather.Controllers.dll">
+      <publishTime>12/06/2016 10:12:28</publishTime>
+    </File>
+    <File Include="bin/Yamon.Module.Weather.DAL.dll">
+      <publishTime>12/06/2016 10:12:25</publishTime>
+    </File>
+    <File Include="bin/Yamon.Module.Weather.Entity.dll">
+      <publishTime>12/06/2016 10:12:23</publishTime>
+    </File>
+    <File Include="bin/Yamon.Module.Weather.WebApi.dll">
+      <publishTime>12/06/2016 17:36:30</publishTime>
+    </File>
+    <File Include="bin/Yamon.Module.WeiXin.Web.dll">
+      <publishTime>12/06/2016 10:12:29</publishTime>
+    </File>
+    <File Include="bin/Yamon.Module.zdz.DAL.dll">
+      <publishTime>12/06/2016 17:36:27</publishTime>
+    </File>
+    <File Include="bin/Yamon.Module.zdz.Entity.dll">
+      <publishTime>12/06/2016 10:12:25</publishTime>
+    </File>
+    <File Include="bin/Yamon.Module.zdz.WebApi.dll">
+      <publishTime>12/06/2016 17:36:32</publishTime>
+    </File>
+    <File Include="bin/Yamon.Monitor.WeixinMP.CommonService.dll">
+      <publishTime>12/06/2016 10:12:25</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Net.Http.Formatting.resources.dll">
+      <publishTime>11/09/2016 14:47:34</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Net.Http.resources.dll">
+      <publishTime>07/09/2013 11:34:42</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Net.Http.WebRequest.resources.dll">
+      <publishTime>07/09/2013 11:34:40</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Helpers.resources.dll">
+      <publishTime>11/09/2016 14:47:34</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Http.resources.dll">
+      <publishTime>11/09/2016 14:47:34</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Http.WebHost.resources.dll">
+      <publishTime>11/09/2016 14:47:34</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Razor.resources.dll">
+      <publishTime>11/09/2016 14:47:34</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Deployment.resources.dll">
+      <publishTime>11/09/2016 14:47:34</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Razor.resources.dll">
+      <publishTime>11/09/2016 14:47:34</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.resources.dll">
+      <publishTime>11/09/2016 14:47:34</publishTime>
+    </File>
+    <File Include="client.config">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/artTemplate/template.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/bootstrap/css/bootstrap-theme.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/bootstrap/css/bootstrap-theme.css.map">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/bootstrap/css/bootstrap-theme.min.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/bootstrap/css/bootstrap.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/bootstrap/css/bootstrap.css.map">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/bootstrap/css/bootstrap.min.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/bootstrap/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/bootstrap/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/bootstrap/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/bootstrap/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/bootstrap/fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/bootstrap/js/bootstrap.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/bootstrap/js/bootstrap.min.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/bootstrap/js/npm.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/echarts/echarts.min.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Home/css/Index.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Home/css/Index1.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Home/css/show.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Home/css/station.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Home/css/style.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Home/Images/g.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Home/Images/icon.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Home/Images/雨.jpg">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Home/js/homepage.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Home/js/jquery.form.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Home/js/jquery.min.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Home/js/jquery.query.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Home/js/jquery.tablesorter.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Home/js/json2.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Home/js/PM.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Home/js/public.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Home/js/show.js">
+      <publishTime>11/14/2016 13:01:06</publishTime>
+    </File>
+    <File Include="Static/images/kq.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/images/qy.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/images/sd.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/images/wind.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/ImgPlay/css/style.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/ImgPlay/Images/head.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/ImgPlay/Images/next.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/ImgPlay/Images/nmchdpt-001_201609211324.PNG">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/ImgPlay/Images/noselect.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/ImgPlay/Images/pause.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/ImgPlay/Images/play.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/ImgPlay/Images/previous.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/ImgPlay/Images/select.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/ImgPlay/js/imageshow.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/ImgPlay/js/tabicon.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/ImgPlay/js/touchswipe.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/jquery-weui-build/css/demos.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/jquery-weui-build/css/jquery-weui.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/jquery-weui-build/css/jquery-weui.min.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/jquery-weui-build/css/swiper-3.4.0.min.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/jquery-weui-build/css/weui.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/jquery-weui-build/css/weui.min.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/jquery-weui-build/js/city-picker.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/jquery-weui-build/js/city-picker.min.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/jquery-weui-build/js/jquery-2.1.4.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/jquery-weui-build/js/jquery-weui.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/jquery-weui-build/js/jquery-weui.min.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/jquery-weui-build/js/swiper.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/jquery-weui-build/js/swiper.min.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/jquery-weui-build/js/zepto.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/knockout/knockout.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/knockout/knockout.validation.min.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Subscribe/Images/1.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Subscribe/js/Subscribe.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Typhoon/css/leaflet.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Typhoon/css/TyphoonLine.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Typhoon/Images/arrow_down.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Typhoon/Images/hour24.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Typhoon/Images/hour48.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Typhoon/Images/notf.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Typhoon/Images/n_01_v4.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Typhoon/Images/n_02_v3.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Typhoon/Images/n_03_v3.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Typhoon/Images/n_04_v1.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Typhoon/Images/n_05.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Typhoon/Images/n_06.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Typhoon/Images/n_07.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Typhoon/Images/n_08.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Typhoon/Images/rotate.gif">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Typhoon/Images/smmc.jpg">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Typhoon/Images/typhoon_03.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Typhoon/Images/typhoon_06.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Typhoon/Images/typhoon_08.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Typhoon/Images/typhoon_10.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Typhoon/Images/typhoon_12.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Typhoon/Images/typhoon_14.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Typhoon/Images/typhoon_16.png">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Typhoon/Images/v_01_v3.png">
+      <publishTime>11/14/2016 18:31:20</publishTime>
+    </File>
+    <File Include="Static/Typhoon/js/leaflet.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/Typhoon/js/typhoon.js">
+      <publishTime>11/14/2016 18:31:20</publishTime>
+    </File>
+    <File Include="Static/Typhoon/js/Utility.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/zepto/css/reset.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/zepto/css/widget/navigator/navigator.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/zepto/css/widget/navigator/navigator.default.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/zepto/css/widget/navigator/navigator.iscroll.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/zepto/css/widget/navigator/navigator.iscroll.default.css">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/zepto/js/widget/navigator.iscroll.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/zepto/js/widget/navigator.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/zepto/js/zepto.extend.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/zepto/js/zepto.iscroll.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/zepto/js/zepto.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Static/zepto/js/zepto.ui.js">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Views/Home/homepage.cshtml">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Views/Home/ImgPlay.cshtml">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Views/Home/Index1.cshtml">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Views/Home/Index2.cshtml">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Views/Home/Product.cshtml">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Views/Home/Station.cshtml">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Views/Home/StationImgPlay.cshtml">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Views/Home/StationPM.cshtml">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Views/Home/Text.cshtml">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Views/Home/TyphoonLine.cshtml">
+      <publishTime>10/31/2016 15:25:35</publishTime>
+    </File>
+    <File Include="Views/Home2/BsStation.cshtml">
+      <publishTime>11/18/2016 15:33:26</publishTime>
+    </File>
+    <File Include="Views/Home2/Doc.cshtml">
+      <publishTime>11/16/2016 14:34:19</publishTime>
+    </File>
+    <File Include="Views/Home2/Index.cshtml">
+      <publishTime>12/06/2016 15:12:51</publishTime>
+    </File>
+    <File Include="Views/Home2/Index2.cshtml">
+      <publishTime>11/23/2016 14:39:16</publishTime>
+    </File>
+    <File Include="Views/Home2/Layout.cshtml">
+      <publishTime>12/06/2016 15:00:33</publishTime>
+    </File>
+    <File Include="Views/Home2/PMStation.cshtml">
+      <publishTime>11/16/2016 14:33:57</publishTime>
+    </File>
+    <File Include="Views/Home2/Show.cshtml">
+      <publishTime>11/24/2016 17:51:59</publishTime>
+    </File>
+    <File Include="Views/Home2/ShowLayout.cshtml">
+      <publishTime>12/06/2016 09:35:06</publishTime>
+    </File>
+    <File Include="Views/Home2/ShowShStation.cshtml">
+      <publishTime>12/05/2016 18:04:01</publishTime>
+    </File>
+    <File Include="Views/Home2/ShShowstation.cshtml">
+      <publishTime>11/23/2016 11:31:05</publishTime>
+    </File>
+    <File Include="Views/Home2/ShStation.cshtml">
+      <publishTime>12/06/2016 17:35:01</publishTime>
+    </File>
+    <File Include="Views/Home2/Station.cshtml">
+      <publishTime>12/06/2016 09:38:28</publishTime>
+    </File>
+    <File Include="Views/Home2/StationPM.cshtml">
+      <publishTime>11/10/2016 09:25:39</publishTime>
+    </File>
+    <File Include="Views/Home2/Text.cshtml">
+      <publishTime>11/16/2016 14:33:39</publishTime>
+    </File>
+    <File Include="Views/Home2/TyphoonLine.cshtml">
+      <publishTime>11/14/2016 18:31:20</publishTime>
+    </File>
+    <File Include="Views/Home2/weather.cshtml">
+      <publishTime>11/28/2016 10:34:02</publishTime>
+    </File>
+    <File Include="Views/Home2/weatherInfo.cshtml">
+      <publishTime>11/28/2016 11:04:11</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Views/Shared/Foot.cshtml">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Views/Shared/Top.cshtml">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout1.cshtml">
+      <publishTime>11/09/2016 14:47:31</publishTime>
+    </File>
+    <File Include="Views/Shared/_TyphoonLayout.cshtml">
+      <publishTime>11/11/2016 17:45:23</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>11/10/2016 10:02:37</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/17/2016 11:06:08</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

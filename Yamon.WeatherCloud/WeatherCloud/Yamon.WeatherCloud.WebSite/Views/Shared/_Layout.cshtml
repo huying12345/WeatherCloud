@@ -1,0 +1,192 @@
+﻿@using System.Collections
+@using Yamon.Module.SiteManage.DAL
+@using Yamon.Module.SiteManage.Entity
+@using Yamon.Module.UCenter.DAL
+@{
+    MenuDAL menuDal = new MenuDAL();
+    RolePurviewDAL rolePurviewDal = new RolePurviewDAL();
+    string roleId = CookieHelper.GetCookie("RoleIDList");
+    ArrayList purviewList = rolePurviewDal.GetPurviewListByRoleID(roleId);
+    ViewBag.LeftMenuList = menuDal.GetMyTreeMenuList(roleId, purviewList);
+    VersionInfoDAL versionDal=new VersionInfoDAL();
+    string menuId = RequestHelper.GetRequestString("Menu");
+    List<Menu> parentMenuList = new List<Menu>();
+    if (!string.IsNullOrEmpty(menuId))
+    {
+        List<Menu> menuList = menuDal.GetMyMenuList(roleId, purviewList);
+        Menu menuInfo = menuList.FindLast(o => o.MenuID == menuId);
+        if (menuInfo != null)
+        {
+            ViewBag.Title = menuInfo.MenuName;
+            ViewBag.TitleTips = menuInfo.Tips;
+            parentMenuList = menuDal.GetParentPathList(menuList,menuInfo.MenuID,false);
+        }
+    }
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewBag.Title - @(ViewBag.Config.SiteName)</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link href="/Resources/JsLib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Resources/JsLib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Static/AdminLTE2/css/AdminLTE.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/Resources/JsLib/jquery-easyui/themes/bootstrap/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="/Resources/JsLib/jquery-easyui/themes/icon.css" />
+    <link href="/Static/v1/css/common.css" rel="stylesheet" />
+    <link href="/Static/AdminLTE2/css/skins/_all-skins.min.css" rel="stylesheet" />
+    <link href="/Static/Home/css/Public.css" rel="stylesheet" />
+    <script src="/Resources/JsLib/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    @RenderSection("styles", required: false)
+    <script type="text/javascript">
+        var config = {};
+        config.ResourcesPath = "@Url.Content("~/Resources/")";
+        config.ViewPath = "@Url.Content("~/Static/")";
+        config.BaseURI = "@Url.Content("~/")";
+        config.RootURI = "@RequestHelper.GetRootURI()";
+
+        var myPage = {};
+        myPage.action = '@(ViewContext.RouteData.Values["action"].ToString())';
+        myPage.controller = '@(ViewContext.RouteData.Values["controller"].ToString())';
+        myPage.id = '@(ViewContext.RouteData.Values["id"])';
+        myPage.frame = '@(Request["Frame"])';
+
+    </script>
+</head>
+<body class="hold-transition @(CookieHelper.GetCookie("SkinName")) layout-top-nav">
+    <div class="wrapper">
+        <header class="main-header">
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a href="/" class="logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini"><b>A</b>pp</span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg">@(ViewBag.Config.SiteName)</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        @RenderPage("Navigation.cshtml")
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li id="control-sidebar" class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="@(CookieHelper.GetCookie("UserFace", "/Static/AdminLTE2/img/avatar5.png"))" class="user-image" alt="User Image">
+                                <span class="hidden-xs">@(CookieHelper.GetCookie("UserName"))</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="@(CookieHelper.GetCookie("UserFace", "/Static/AdminLTE2/img/avatar5.png"))" class="img-circle" alt="User Image">
+                                    <p>
+                                        @(CookieHelper.GetCookie("TrueName"))
+                                        @*<small>登录次数 - 102次</small>*@
+                                    </p>
+                                </li>
+                                <!-- Menu Body -->
+                                @*<li class="user-body">
+                                    <div class="row">
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">Followers</a>
+                                        </div>
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">Sales</a>
+                                        </div>
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">Friends</a>
+                                        </div>
+                                    </div>
+                                </li>*@
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a id="editpass" href="javascript:void(0)" class="btn btn-default btn-flat">修改密码</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a id="loginOut" href="javascript:void(0)" class="btn btn-default btn-flat">退出</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+    </header>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            @if (!string.IsNullOrEmpty(menuId))
+            {
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        @(ViewBag.Title)
+                        <small>@(ViewBag.Tips)</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i>首页</a></li>
+                        @foreach (var menu in parentMenuList)
+                        {
+                            <li><a href="#">@(menu.MenuName)</a></li>
+                        }
+                        <li class="active">@(ViewBag.Title)</li>
+                    </ol>
+                </section>
+            }
+            <!-- Main content -->
+            <section class="content">
+                @RenderBody()
+            </section>
+        </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer" style="height: 30px; padding: 5px;">
+                <div class="pull-right hidden-xs">
+                    <a href="/SiteManage/VersionInfo/Version" target="_blank"><b>当前版本：</b>@(versionDal.GetVersionString())</a>
+                </div>
+                <strong>Copyright &copy; 2014-2016 @*<a href="http://www.yamon.com.cn/">亚萌科技</a>.*@</strong> All rights
+                reserved.
+            </footer>
+            <!-- Control Sidebar -->
+            <aside class="control-sidebar control-sidebar-dark">
+                <!-- Create the tabs -->
+                <!-- Tab panes -->
+                <div class="tab-content" id="control-sidebar-home-tab">
+                    <!-- Home tab content -->
+                </div>
+            </aside>
+            <!-- /.control-sidebar -->
+            <!-- Add the sidebar's background. This div must be placed
+             immediately after the control sidebar -->
+            <div class="control-sidebar-bg"></div>
+        </div>
+    <!-- ./wrapper -->
+    <!-- Bootstrap 3.3.5 -->
+    <script src="/Resources/JsLib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/Resources/JsLib/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="/Resources/JsLib/fastclick/fastclick.min.js"></script>
+    <!-- FastClick -->
+    <!-- AdminLTE App -->
+    <script src="/Static/AdminLTE2/js/app.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="/Static/AdminLTE2/js/demo.js"></script>
+    <script type="text/javascript" src="/Resources/JsLib/jquery-easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="/Resources/JsLib/jquery-easyui/locale/easyui-lang-zh_CN.js"></script>
+
+    <!--弹出窗体-->
+    <div id="dialogDiv" style="overflow:hidden">
+    </div>
+    <script src="/Static/v1/js/common.js"></script>
+    @RenderSection("scripts", required: false)
+    @RenderSection("scripts2", required: false)
+    @RenderSection("scripts_toolbar", required: false)
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta http-equiv="pragma" content="no-cache">
+    <!-- HTTP 1.0 -->
+    <meta http-equiv="cache-control" content="no-cache">
+    <!-- Prevent caching at the proxy server -->
+    <meta http-equiv="expires" content="0">
+    <link href="~/assets/css/base.css" rel="stylesheet" />
+    <link href="~/assets/font/iconfont.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+    @RenderSection("styles", required: false)
+</head>
+<body>
+
+    @*<div class="weui_tab">
+        <div style="text-align:center;height: 40px;" id="title" >
+            <h4 id="Title1" style="font-size:20px;line-height:35px;padding:5px; background-color:#0993c7 ;">台风路径预报</h4>
+            <a href="/Home2/Index"><span style="top:3px; font-size:23px;" id="left-hidess" class="iconfont">&#xe608</span></a>
+
+        </div>
+    </div>*@
+    <header class="bar bar-nav">
+        <h1 class="title" id="Title1">台风路径预报</h1>
+        <a class="icon pull-left" href="/home2/index" id="left-hidess">
+            <i class="iconfont icon-home"></i>
+        </a>
+    </header>
+    @RenderBody()
+
+    <script src="http://typhoon.shmmc.cn/TyphoonLine/Scripts/jquery-1.7.min.js" type="text/javascript"></script>
+    <script src="~/Static/Home/js/json2.js"></script>
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

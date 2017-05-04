@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "雷达卫星";
+    Layout = "ShowLayout.cshtml";
+}
+
+@section styles{
+<link href="~/assets/css/Station.css" rel="stylesheet" />
+<link href="~/assets/css/StationPM.css" rel="stylesheet" />
+}
+@section scripts{
+    <script src="~/Static/echarts/echarts.min.js"></script>
+    <script src="~/assets/js/bsstation.js"></script>
+<script src="~/assets/js/bsstationPM.js"></script>
+    <script type="text/javascript">     
+        var parentId=@(Yamon.Framework.Common.RequestHelper.GetInt("ParentID"));   
+        $(function () {
+            var ViewModel = new PMViewModel();
+            ko.applyBindings(ViewModel, document.getElementById("stationPMdiv"));
+            ViewModel.init(parentId);
+        });
+    </script>
+}
+<div class="show_content">
+    <span id="show_time" class="show_time">2016年11月02日23点30分</span>
+    <div class="show_map">
+        <img src="" id="imgshow" alt="雷达图" />
+    </div>
+    <div class="show_btns">
+        <span id="previousbutton" class="iconfont icon-prev"></span>
+        <span id="playbutton" class="iconfont icon-play"></span>
+        <span id="nextbutton" class="iconfont icon-next"></span>
+    </div>
+    <div id="Subscribe" class="Subscribe">
+    <!--ko ifnot: issubscribe-->
+    <span data-bind="click:addSubscribeNode">立即收藏</span>
+    <!--/ko-->
+    <span data-bind="visible:issubscribe,click:removeSubscribeNode">取消收藏</span>
+</div>
+</div>
+@section extend{
+@RenderPage("StationPM.cshtml")
+}

@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content=""> 
+    <link href="~/assets/css/base.css" rel="stylesheet" />
+    <link href="~/assets/font/iconfont.css" rel="stylesheet" />
+    <link href="~/assets/libs/weui/weui.css" rel="stylesheet" />
+    <link href="~/assets/libs/jquery-weui/jquery-weui.css" rel="stylesheet" /> 
+    <link href="~/assets/css/style.css" rel="stylesheet" />
+    @RenderSection("styles", required: false)
+    <script type="text/javascript">
+    var myPage = {};
+    myPage.action = '@(ViewContext.RouteData.Values["action"].ToString())';
+    myPage.controller = '@(ViewContext.RouteData.Values["controller"].ToString())';
+    myPage.id = '@(ViewContext.RouteData.Values["id"])';
+    </script>
+</head>
+
+<body ontouchstart>
+    <div class="weui_tab">       
+        <div class="weui_tab_bd">
+            @RenderBody()
+        </div>
+        <div class="weui_tabbar">
+            <a class="weui_tabbar_item weui_bar_item_on" href="/home2/index?ParentID=8" id="tab_8">
+                <div class="weui_tabbar_icon">
+                    <i class="iconfont icon-leida"></i>
+                </div>
+                <p class="weui_tabbar_label">天气监测</p>
+            </a>
+            <a class="weui_tabbar_item " href="/home2/index?ParentID=151" id="tab_151">
+                <div class="weui_tabbar_icon">
+                    <i class="iconfont icon-tianqiyubao"></i>
+                </div>
+                <p class="weui_tabbar_label">数值预报</p>
+            </a>
+            <a class="weui_tabbar_item" href="/home2/index?ParentID=190" id="tab_190">
+                <div class="weui_tabbar_icon">
+                    <i class="iconfont icon-tongbaoyujing"></i>
+                </div>
+                <p class="weui_tabbar_label">指导预报</p>
+            </a>
+            <a class="weui_tabbar_item" href="/home2/index?ParentID=196" id="tab_196">
+                <div class="weui_tabbar_icon">
+                    <i class="iconfont icon-iconboat"></i>
+                </div>
+                <p class="weui_tabbar_label">邮轮气象</p>
+            </a>
+            
+        </div>
+    </div>
+
+    <script src="~/assets/libs/jquery/jquery.min.js"></script>
+    <script src="/assets/libs/fastclick/fastclick.js"></script>
+    <script src="~/assets/libs/knockout/knockout.js"></script>
+    <script src="~/assets/js/base.js?20161206"></script>
+    <script>
+        var userId = @(Yamon.Framework.Common.CookieHelper.GetCookieInt("UserID"));
+        $(function () {
+            FastClick.attach(document.body);
+        });
+    </script>
+    <script src="/assets/libs/jquery-weui/jquery-weui.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

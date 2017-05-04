@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "雷达卫星";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+@section styles{
+    <link href="~/Static/ImgPlay/css/style.css" rel="stylesheet" />
+
+
+    <style>
+        .noselect {
+            background-color: white;
+            background: url(../../Static/ImgPlay/Images/noselect.png) repeat;
+        }
+
+        .select {
+            color: #ffffff !important;
+            background: url(../../Static/ImgPlay/Images/select.png) repeat;
+            vertical-align: middle;
+        }
+
+            .select a {
+                color: #ffffff !important;
+            }
+
+        #district {
+            border-collapse: collapse;
+        }
+
+            #district td {
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                padding: 3px;
+            }
+
+        #imgshow {
+        }
+
+        .imageinfo {
+            padding: 0px;
+            margin-top: 12px;
+        }
+
+            .imageinfo p {
+                margin: 2px;
+            }
+
+        .headerdiv {
+            height: 35px;
+            background: #ffffff url('../../Static/ImgPlay/Images/head.png') repeat-x;
+            font-weight: bold;
+            padding: 10px 3px 5px 5px;
+        }
+
+        body {
+            color: #555555;
+        }
+    </style>
+
+}
+@section scripts{
+
+    <script src="~/Static/ImgPlay/js/touchswipe.js"></script>
+<script src="~/Static/Subscribe/js/Subscribe.js"></script>
+}
+
+<div style="background-color: #ffffff;  ">
+    @*<div class="headerdiv">
+            <table>
+                <tr>
+
+                    <td>
+                        <div style="margin-left:4px;color:#4b6594;">上海海洋气象台<span id="fbsj" class="fbsj">2015年06月02日23点30分</span></div>
+                    </td>
+                </tr>
+            </table>
+        </div>*@
+    <div style="width:100%; height:1px;"></div>
+
+
+    <table class="navs" cellpadding="0" cellspacing="0" style=" height:30px;display:none" id="tablediv">
+
+        <tr data-bind='foreach: lines3' class="line">
+            <td class="selecttabicon col-xs-1" style=" vertical-align:middle;border:2px solid #DDDDDD" align="center" name="1"><a data-bind="text:NodeName,attr:{class:NodeID }"></a></td>
+
+        </tr>
+
+    </table>
+
+
+    <div class="navs" style=" border:1px solid #fff;display:none" id="uldiv">
+        <ul class="line" data-bind='foreach: lines3'>
+            <li class="selecttabicon " style=" vertical-align:middle;border:1px solid #DDDDDD" align="center" name="1" data-bind="attr:{id:NodeID }"><a data-bind="text:NodeName,attr:{class:NodeID }"></a></li>
+        </ul>
+    </div>
+    <div style="padding-left:12px; padding-right:12px; padding-top:8px;text-align:center; ">
+        <span id="fbsj" class="fbsj" style="color:#000">2015年06月02日23点30分</span>
+        <div>
+            <img id="imgshow" alt="雷达图" border="0" style="width:100%" />
+        </div>
+
+        <div class="graph02b_left3" style="background-color: #7e9cef; text-align: center;padding:0px">
+            <img id="nextbutton" title="上一时次" src="~/Static/ImgPlay/Images/previous.png" style="width:40px" />
+            <img id="playbutton" title="播放" src="~/Static/ImgPlay/Images/play.png" style="width:40px" />
+
+            <img id="previousbutton" title="下一时次" src="~/Static/ImgPlay/Images/next.png" style="width:40px" />
+        </div>
+        <div style="margin-top:12px;background-color:#f4f4f4;  padding:8px;text-align:left">
+            <div id="imageinfo"></div>
+        </div>
+        <div id="Subscribe" style=" padding-right:10px; float:right; width:100px;">
+            <img id="imgSubscribe" src="~/Static/Subscribe/Images/1.png" />
+            <label id="lblSubscribe"></label>
+        </div>
+    </div>
+</div>
+
+

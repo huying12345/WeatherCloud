@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "导航";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Static/Home/css/style.css" rel="stylesheet" />
+    <!--第一屏-->
+    <div class="first_screen">
+        <!--搜索框-->
+        <div class="first_city">
+            <div class="dw"><span><img src="http://wx.tianqi.cn//Public/template/images/news47.png"></span><city></city></div>
+            <!--<div class="now"><span><img src="http://wx.tianqi.cn//Public/template/images/news48.png"></span>搜索</div> -->
+        </div>
+        <!--日期 空气指数-->
+        <div class="first_screen_top">
+            <div class="date">
+                <p></p>
+            </div>
+        </div>
+        <!--温度-->
+        <div class="first_screen_center">
+            <ul class="temp_div">
+                <li><p></p></li>
+                <li></li>
+            </ul>
+            <ul class="info-tips">
+                <li style="background:url(/Static/images/sd.png) no-repeat;background-size:23px;"><span>湿度&nbsp; &nbsp;&nbsp; &nbsp;<lable id="humidity"></lable></span></li>
+                <li style="background:url(/Static/images/qy.png) no-repeat;background-size:23px;"><span>气压 &nbsp;<lable id="airpress"></lable></span></li>
+            </ul>
+            <ul class="info-tips">
+                <li style="background:url(/Static/images/wind.png) no-repeat;background-size:23px;"><span><lable id="wind"></lable> &nbsp;&nbsp;&nbsp;<lable id="windNum"></lable></span></li>
+                <li style="background:url(/Static/images/kq.png) no-repeat;background-size:23px;"><span>空气质量&nbsp;&nbsp;<lable id="aqic"></lable></span></li>
+            </ul>
+        </div>
+    </div>
+   
+
+    <!--滚动页面-->
+    <span class="arrow"></span>
+
+
+    @*<script type="text/javascript">
+
+        jQuery(document).ready(function () { });
+
+        $(".now").click(function(){
+            window.location.href="/Index/searchcity";
+        });
+
+        $(".air_zl_li").click(function(){
+            window.location.href="/Index/kqzl";
+        });
+		var h = document.documentElement.clientHeight;
+		var url = encodeURIComponent(window.location.href);
+
+    </script>*@
+<script src="~/Static/Home/js/jquery.min.js"></script>
+<script src="/Static/Home/js/homepage.js"></script>

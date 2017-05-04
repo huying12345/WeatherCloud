@@ -1,0 +1,159 @@
+﻿@{
+    Layout = "Layout.cshtml";
+}
+<link href="~/assets/css/weatherInfo.css" rel="stylesheet" />
+<link href="~/assets/css/icon.css" rel="stylesheet" />
+<link href="~/Static/jquery-weui-build/css/swiper-3.4.0.min.css" rel="stylesheet" />
+@section scripts{
+<script src="~/Static/echarts/echarts.min.js"></script>
+<script src="~/assets/js/weatherInfo.js"></script>
+<script src="~/assets/libs/swiper/swiper.min.js"></script>
+   <script>
+    var swiper = new Swiper('.swiper-container', {
+        freeMode:true,
+        freeModeSticky:true,
+        freeModeMomentumRatio: .1,
+        slidesPerView : 'auto',
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        longSwipesRatio: 0.3,
+        touchRatio:1,
+        observer:true,
+        observeParents:true,
+    });
+</script>
+
+}
+<div class="weui_tab">
+    <div class="weui_navbar">
+        <ul class="weui-row">
+            <li class="weui-col-33"><a href="/home2/index" class="iconfont icon-fanhui"></a></li>
+            <li class="weui-col-33">宝山</li>
+            <li class="weui-col-33"></li>
+        </ul>
+    </div>
+    <div class="weui_tab_bd" id="weatherPanel">
+        <div class="weather" data-bind="with:stationWeather">
+            <table>
+                <tr>
+                    <td>今天&nbsp;<span data-bind="text:'（'+Datetime+'）'">-</span></td>
+                </tr>
+                <tr>
+                    <td data-bind="text:TEM+'°'"></td>
+                </tr>
+            </table>
+            <ul>
+                <li>
+                    <span data-bind="text:WIN_D_Avg_1mi">西北风</span><span data-bind="text:WIN_S_Avg_1mi">1</span>
+                    <span data-bind="text:'湿度'+RHU+'%'">64%</span>
+                    <span data-bind="text:'降水量'+PRE+'mm'">降雨量00mm</span>
+                </li>
+                <li>
+                    <i class="iconfont icon-weather-leaf" data-bind="style:{background:AQI<=50?'#02E300':(AQI<=100?'#FFFF00':(AQI<=150?'#FF7E00':(AQI<=200?'#FE0000':(AQI<=300?'#98004B':'#7E0123')))),color:AQI<=100?'#000':'#fff'}"></i>
+                    <span data-bind="text:AQI">22</span><span data-bind="text:Quality">优</span>
+                </li>
+            </ul>
+        </div>
+@*未来十天天气详情*@
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <table>
+                        <tr>
+                            <!--ko  foreach:nodeWeather-->
+                            <td data-bind="text:weak">今天</td>
+                            <!--/ko-->
+                        </tr>
+                        <tr>
+                            <!--ko  foreach:nodeWeather-->
+                            <td data-bind="text:WeatherA">小雨</td>
+                            <!--/ko-->
+                        </tr>
+                        <tr style="height:48px;">
+                            <!--ko  foreach:nodeWeather-->
+                            <td><i data-bind="attr:{class:'iconfont icon-weather-'+WeatherA_PY}"></i></td>
+                            <!--/ko-->
+                        </tr>
+                    </table>
+                    <div id="main">@*气温曲线图*@</div>
+                    <table style="margin-top:-80px;">
+                        <tr style="height:48px;">
+                            <!--ko  foreach:nodeWeather-->
+                            <td><i data-bind="attr:{class:'iconfont icon-weather-'+WeatherB_PY}"></i></td>
+                            <!--/ko-->
+                        </tr>
+                    </table>
+                        <table>
+                            <tr>
+                                <!--ko  foreach:nodeWeather-->
+                                <td data-bind="text:WeatherB">晴</td>
+                                <!--/ko-->
+                            </tr>
+                        </table>
+                    <table>
+                        <tr>
+                            <!--ko  foreach:nodeWeather-->
+                            <td data-bind="text:WindDir">西北风</td>
+                            <!--/ko-->
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <!--ko  foreach:nodeWeather-->
+                            <td data-bind="text:WindForce">3级</td>
+                            <!--/ko-->
+                        </tr>
+                    </table>
+                </div>
+                <div class="swiper-slide">
+                    <table>
+                        <tr>
+                            <!--ko  foreach:nodeWeather2-->
+                            <td data-bind="text:weak">今天</td>
+                            <!--/ko-->
+                        </tr>
+                        <tr>
+                            <!--ko  foreach:nodeWeather2-->
+                            <td data-bind="text:WeatherA">小雨</td>
+                            <!--/ko-->
+                        </tr>
+                        <tr style="height:48px;">
+                            <!--ko  foreach:nodeWeather2-->
+                            <td><i data-bind="attr:{class:'iconfont icon-weather-'+WeatherA_PY}"></i></td>
+                            <!--/ko-->
+                        </tr>
+                    </table>
+                    <div id="main">@*气温曲线图*@</div>
+                    <table style="margin-top:-80px;">
+                        <tr style="height:48px;">
+                            <!--ko  foreach:nodeWeather2-->
+                            <td><i data-bind="attr:{class:'iconfont icon-weather-'+WeatherB_PY}"></i></td>
+                            <!--/ko-->
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <!--ko  foreach:nodeWeather2-->
+                            <td data-bind="text:WeatherB">晴</td>
+                            <!--/ko-->
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <!--ko  foreach:nodeWeather2-->
+                            <td data-bind="text:WindDir">西北风</td>
+                            <!--/ko-->
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <!--ko  foreach:nodeWeather2-->
+                            <td data-bind="text:WindForce">3级</td>
+                            <!--/ko-->
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>   
+</div>

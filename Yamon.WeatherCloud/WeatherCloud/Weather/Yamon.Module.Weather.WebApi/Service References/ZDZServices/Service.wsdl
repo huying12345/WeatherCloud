@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetAllZdzInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mapType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllZdzInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllZdzInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastestZdzData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dataType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="zdzType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastestZdzDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLastestZdzDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZdzHistoryList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="stationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZdzHistoryListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetZdzHistoryListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastestZdzInfoByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="stationID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastestZdzInfoByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLastestZdzInfoByIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDanYaoShuTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataField" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataTable" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="directionField" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDanYaoShuTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDanYaoShuTableResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDanZhanDianTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDanZhanDianTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDanZhanDianTableResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPairsCurveByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="leftFields" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="leftTable" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rightFields" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rightTable" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPairsCurveByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPairsCurveByIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastestAndHistoryData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="stationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastestAndHistoryDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLastestAndHistoryDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPairsCurveByIDandType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="leftFields" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="leftTable" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rightFields" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rightTable" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPairsCurveByIDandTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPairsCurveByIDandTypeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZdzAlarm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fromTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZdzAlarmResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetZdzAlarmResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZdzStatisticInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fromTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZdzStatisticInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetZdzStatisticInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllBlpZdz">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllBlpZdzResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllBlpZdzResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserOpertationLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="operationType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserOpertationLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserOpertationLogResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecoderUserLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="operationType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecoderUserLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RecoderUserLogResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFourBuyoData">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetFourBuyoDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFourBuyoDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllZdzInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllZdzInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAllZdzInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllZdzInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLastestZdzDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastestZdzData" />
+  </wsdl:message>
+  <wsdl:message name="GetLastestZdzDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastestZdzDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetZdzHistoryListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetZdzHistoryList" />
+  </wsdl:message>
+  <wsdl:message name="GetZdzHistoryListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetZdzHistoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLastestZdzInfoByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastestZdzInfoByID" />
+  </wsdl:message>
+  <wsdl:message name="GetLastestZdzInfoByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastestZdzInfoByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDanYaoShuTableSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDanYaoShuTable" />
+  </wsdl:message>
+  <wsdl:message name="GetDanYaoShuTableSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDanYaoShuTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDanZhanDianTableSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDanZhanDianTable" />
+  </wsdl:message>
+  <wsdl:message name="GetDanZhanDianTableSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDanZhanDianTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPairsCurveByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPairsCurveByID" />
+  </wsdl:message>
+  <wsdl:message name="GetPairsCurveByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPairsCurveByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLastestAndHistoryDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastestAndHistoryData" />
+  </wsdl:message>
+  <wsdl:message name="GetLastestAndHistoryDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastestAndHistoryDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPairsCurveByIDandTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPairsCurveByIDandType" />
+  </wsdl:message>
+  <wsdl:message name="GetPairsCurveByIDandTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPairsCurveByIDandTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetZdzAlarmSoapIn">
+    <wsdl:part name="parameters" element="tns:GetZdzAlarm" />
+  </wsdl:message>
+  <wsdl:message name="GetZdzAlarmSoapOut">
+    <wsdl:part name="parameters" element="tns:GetZdzAlarmResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetZdzStatisticInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetZdzStatisticInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetZdzStatisticInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetZdzStatisticInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllBlpZdzSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllBlpZdz" />
+  </wsdl:message>
+  <wsdl:message name="GetAllBlpZdzSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllBlpZdzResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserOpertationLogSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserOpertationLog" />
+  </wsdl:message>
+  <wsdl:message name="GetUserOpertationLogSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserOpertationLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecoderUserLogSoapIn">
+    <wsdl:part name="parameters" element="tns:RecoderUserLog" />
+  </wsdl:message>
+  <wsdl:message name="RecoderUserLogSoapOut">
+    <wsdl:part name="parameters" element="tns:RecoderUserLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFourBuyoDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFourBuyoData" />
+  </wsdl:message>
+  <wsdl:message name="GetFourBuyoDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFourBuyoDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="GetAllZdzInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获得Air系统的所有图上坐标</wsdl:documentation>
+      <wsdl:input message="tns:GetAllZdzInfoSoapIn" />
+      <wsdl:output message="tns:GetAllZdzInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastestZdzData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据自动站类型获得最新的观测数据</wsdl:documentation>
+      <wsdl:input message="tns:GetLastestZdzDataSoapIn" />
+      <wsdl:output message="tns:GetLastestZdzDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZdzHistoryList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询单个站点的历史曲线</wsdl:documentation>
+      <wsdl:input message="tns:GetZdzHistoryListSoapIn" />
+      <wsdl:output message="tns:GetZdzHistoryListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastestZdzInfoByID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获得单个站点的最新实况观测要素</wsdl:documentation>
+      <wsdl:input message="tns:GetLastestZdzInfoByIDSoapIn" />
+      <wsdl:output message="tns:GetLastestZdzInfoByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDanYaoShuTable">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">选中多个站点查询单要素的历史曲线</wsdl:documentation>
+      <wsdl:input message="tns:GetDanYaoShuTableSoapIn" />
+      <wsdl:output message="tns:GetDanYaoShuTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDanZhanDianTable">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">单站点多要素查询</wsdl:documentation>
+      <wsdl:input message="tns:GetDanZhanDianTableSoapIn" />
+      <wsdl:output message="tns:GetDanZhanDianTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPairsCurveByID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">单站点对比曲线图</wsdl:documentation>
+      <wsdl:input message="tns:GetPairsCurveByIDSoapIn" />
+      <wsdl:output message="tns:GetPairsCurveByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastestAndHistoryData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获得最新数据和曲线图</wsdl:documentation>
+      <wsdl:input message="tns:GetLastestAndHistoryDataSoapIn" />
+      <wsdl:output message="tns:GetLastestAndHistoryDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPairsCurveByIDandType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据类型单站点对比曲线图</wsdl:documentation>
+      <wsdl:input message="tns:GetPairsCurveByIDandTypeSoapIn" />
+      <wsdl:output message="tns:GetPairsCurveByIDandTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZdzAlarm">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">自动站报警查询</wsdl:documentation>
+      <wsdl:input message="tns:GetZdzAlarmSoapIn" />
+      <wsdl:output message="tns:GetZdzAlarmSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZdzStatisticInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">自动站点的统计查询</wsdl:documentation>
+      <wsdl:input message="tns:GetZdzStatisticInfoSoapIn" />
+      <wsdl:output message="tns:GetZdzStatisticInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBlpZdz">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获得所有波浪谱数据的观测站点</wsdl:documentation>
+      <wsdl:input message="tns:GetAllBlpZdzSoapIn" />
+      <wsdl:output message="tns:GetAllBlpZdzSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">验证用户登录</wsdl:documentation>
+      <wsdl:input message="tns:GetUserInfoSoapIn" />
+      <wsdl:output message="tns:GetUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserOpertationLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获得所有用户的操作日志</wsdl:documentation>
+      <wsdl:input message="tns:GetUserOpertationLogSoapIn" />
+      <wsdl:output message="tns:GetUserOpertationLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecoderUserLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">插入用户的操作日志</wsdl:documentation>
+      <wsdl:input message="tns:RecoderUserLogSoapIn" />
+      <wsdl:output message="tns:RecoderUserLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFourBuyoData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获得海事需要的四个站点的实况信息表</wsdl:documentation>
+      <wsdl:input message="tns:GetFourBuyoDataSoapIn" />
+      <wsdl:output message="tns:GetFourBuyoDataSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllZdzInfo">
+      <soap:operation soapAction="http://tempuri.org/GetAllZdzInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastestZdzData">
+      <soap:operation soapAction="http://tempuri.org/GetLastestZdzData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZdzHistoryList">
+      <soap:operation soapAction="http://tempuri.org/GetZdzHistoryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastestZdzInfoByID">
+      <soap:operation soapAction="http://tempuri.org/GetLastestZdzInfoByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDanYaoShuTable">
+      <soap:operation soapAction="http://tempuri.org/GetDanYaoShuTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDanZhanDianTable">
+      <soap:operation soapAction="http://tempuri.org/GetDanZhanDianTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPairsCurveByID">
+      <soap:operation soapAction="http://tempuri.org/GetPairsCurveByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastestAndHistoryData">
+      <soap:operation soapAction="http://tempuri.org/GetLastestAndHistoryData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPairsCurveByIDandType">
+      <soap:operation soapAction="http://tempuri.org/GetPairsCurveByIDandType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZdzAlarm">
+      <soap:operation soapAction="http://tempuri.org/GetZdzAlarm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZdzStatisticInfo">
+      <soap:operation soapAction="http://tempuri.org/GetZdzStatisticInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBlpZdz">
+      <soap:operation soapAction="http://tempuri.org/GetAllBlpZdz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <soap:operation soapAction="http://tempuri.org/GetUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserOpertationLog">
+      <soap:operation soapAction="http://tempuri.org/GetUserOpertationLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecoderUserLog">
+      <soap:operation soapAction="http://tempuri.org/RecoderUserLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFourBuyoData">
+      <soap:operation soapAction="http://tempuri.org/GetFourBuyoData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllZdzInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetAllZdzInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastestZdzData">
+      <soap12:operation soapAction="http://tempuri.org/GetLastestZdzData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZdzHistoryList">
+      <soap12:operation soapAction="http://tempuri.org/GetZdzHistoryList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastestZdzInfoByID">
+      <soap12:operation soapAction="http://tempuri.org/GetLastestZdzInfoByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDanYaoShuTable">
+      <soap12:operation soapAction="http://tempuri.org/GetDanYaoShuTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDanZhanDianTable">
+      <soap12:operation soapAction="http://tempuri.org/GetDanZhanDianTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPairsCurveByID">
+      <soap12:operation soapAction="http://tempuri.org/GetPairsCurveByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastestAndHistoryData">
+      <soap12:operation soapAction="http://tempuri.org/GetLastestAndHistoryData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPairsCurveByIDandType">
+      <soap12:operation soapAction="http://tempuri.org/GetPairsCurveByIDandType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZdzAlarm">
+      <soap12:operation soapAction="http://tempuri.org/GetZdzAlarm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZdzStatisticInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetZdzStatisticInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBlpZdz">
+      <soap12:operation soapAction="http://tempuri.org/GetAllBlpZdz" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserOpertationLog">
+      <soap12:operation soapAction="http://tempuri.org/GetUserOpertationLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecoderUserLog">
+      <soap12:operation soapAction="http://tempuri.org/RecoderUserLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFourBuyoData">
+      <soap12:operation soapAction="http://tempuri.org/GetFourBuyoData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://124.74.246.175/ZDZServices/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://124.74.246.175/ZDZServices/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

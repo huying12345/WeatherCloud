@@ -1,0 +1,1499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetSiteData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="siteID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiteDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSiteDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MySoapHeader" type="tns:MySoapHeader" />
+      <s:complexType name="MySoapHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PassWord" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetDayTrend">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="siteID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDayTrendResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDayTrendResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMonthTrend">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="siteID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMonthTrendResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMonthTrendResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiteRank">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSiteRankResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSiteRankResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SoftVersion">
+        <s:complexType />
+      </s:element>
+      <s:element name="SoftVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SoftVersionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiteAQIData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="siteID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiteAQIDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSiteAQIDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewSiteAQIData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="siteID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewSiteAQIDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNewSiteAQIDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiteHoursAQIData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="siteID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiteHoursAQIDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSiteHoursAQIDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAirForecast">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAirForecastResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAirForecastResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHourAQITrend">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="siteID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHourAQITrendResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHourAQITrendResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewHourAQITrend">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="siteID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewHourAQITrendResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNewHourAQITrendResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDayAQITrend">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="siteID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDayAQITrendResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDayAQITrendResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AQIDaily">
+        <s:complexType />
+      </s:element>
+      <s:element name="AQIDailyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AQIDailyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EarlyWarningInfo_mai">
+        <s:complexType />
+      </s:element>
+      <s:element name="EarlyWarningInfo_maiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EarlyWarningInfo_maiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EarlyWarningInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="EarlyWarningInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EarlyWarningInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EarlyWarningInfoTop1">
+        <s:complexType />
+      </s:element>
+      <s:element name="EarlyWarningInfoTop1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EarlyWarningInfoTop1Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StationList">
+        <s:complexType />
+      </s:element>
+      <s:element name="StationListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StationListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MobileNotice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="movemenID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MobileNoticeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MobileNoticeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiteValueData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="siteID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiteValueDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSiteValueDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDeviceToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deviceToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deviceToname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deviceToapp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDeviceTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddDeviceTokenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDeviceToken3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deviceToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deviceToname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deviceToapp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDeviceToken3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddDeviceToken3Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDeviceToken1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deviceToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDeviceToken1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddDeviceToken1Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDayPrimary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="siteID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDayPrimaryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDayPrimaryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLast24HourAQI">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetLast24HourAQIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLast24HourAQIResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewEarlyWarningInfo_mai">
+        <s:complexType />
+      </s:element>
+      <s:element name="NewEarlyWarningInfo_maiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewEarlyWarningInfo_maiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewEarlyWarningInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="NewEarlyWarningInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewEarlyWarningInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewEarlyWarningInfoTop1">
+        <s:complexType />
+      </s:element>
+      <s:element name="NewEarlyWarningInfoTop1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewEarlyWarningInfoTop1Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMobileMessageAndroid">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMobileMessageAndroidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMobileMessageAndroidResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMobileMessageIphone">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMobileMessageIphoneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMobileMessageIphoneResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewAirForecast">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetNewAirForecastResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNewAirForecastResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewAirForecastIphone">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetNewAirForecastIphoneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNewAirForecastIphoneResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewAirForecastAndroid">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetNewAirForecastAndroidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNewAirForecastAndroidResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetSiteDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSiteData" />
+  </wsdl:message>
+  <wsdl:message name="GetSiteDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSiteDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSiteDataMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetDayTrendSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDayTrend" />
+  </wsdl:message>
+  <wsdl:message name="GetDayTrendSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDayTrendResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDayTrendMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMonthTrendSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMonthTrend" />
+  </wsdl:message>
+  <wsdl:message name="GetMonthTrendSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMonthTrendResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMonthTrendMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetSiteRankSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSiteRank" />
+  </wsdl:message>
+  <wsdl:message name="GetSiteRankSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSiteRankResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSiteRankMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="SoftVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:SoftVersion" />
+  </wsdl:message>
+  <wsdl:message name="SoftVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:SoftVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SoftVersionMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetSiteAQIDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSiteAQIData" />
+  </wsdl:message>
+  <wsdl:message name="GetSiteAQIDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSiteAQIDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSiteAQIDataMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetNewSiteAQIDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNewSiteAQIData" />
+  </wsdl:message>
+  <wsdl:message name="GetNewSiteAQIDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNewSiteAQIDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNewSiteAQIDataMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetSiteHoursAQIDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSiteHoursAQIData" />
+  </wsdl:message>
+  <wsdl:message name="GetSiteHoursAQIDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSiteHoursAQIDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSiteHoursAQIDataMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAirForecastSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAirForecast" />
+  </wsdl:message>
+  <wsdl:message name="GetAirForecastSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAirForecastResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAirForecastMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetHourAQITrendSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHourAQITrend" />
+  </wsdl:message>
+  <wsdl:message name="GetHourAQITrendSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHourAQITrendResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHourAQITrendMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetNewHourAQITrendSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNewHourAQITrend" />
+  </wsdl:message>
+  <wsdl:message name="GetNewHourAQITrendSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNewHourAQITrendResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNewHourAQITrendMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetDayAQITrendSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDayAQITrend" />
+  </wsdl:message>
+  <wsdl:message name="GetDayAQITrendSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDayAQITrendResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDayAQITrendMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="AQIDailySoapIn">
+    <wsdl:part name="parameters" element="tns:AQIDaily" />
+  </wsdl:message>
+  <wsdl:message name="AQIDailySoapOut">
+    <wsdl:part name="parameters" element="tns:AQIDailyResponse" />
+  </wsdl:message>
+  <wsdl:message name="AQIDailyMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="EarlyWarningInfo_maiSoapIn">
+    <wsdl:part name="parameters" element="tns:EarlyWarningInfo_mai" />
+  </wsdl:message>
+  <wsdl:message name="EarlyWarningInfo_maiSoapOut">
+    <wsdl:part name="parameters" element="tns:EarlyWarningInfo_maiResponse" />
+  </wsdl:message>
+  <wsdl:message name="EarlyWarningInfo_maiMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="EarlyWarningInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:EarlyWarningInfo" />
+  </wsdl:message>
+  <wsdl:message name="EarlyWarningInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:EarlyWarningInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EarlyWarningInfoMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="EarlyWarningInfoTop1SoapIn">
+    <wsdl:part name="parameters" element="tns:EarlyWarningInfoTop1" />
+  </wsdl:message>
+  <wsdl:message name="EarlyWarningInfoTop1SoapOut">
+    <wsdl:part name="parameters" element="tns:EarlyWarningInfoTop1Response" />
+  </wsdl:message>
+  <wsdl:message name="EarlyWarningInfoTop1MySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="StationListSoapIn">
+    <wsdl:part name="parameters" element="tns:StationList" />
+  </wsdl:message>
+  <wsdl:message name="StationListSoapOut">
+    <wsdl:part name="parameters" element="tns:StationListResponse" />
+  </wsdl:message>
+  <wsdl:message name="MobileNoticeSoapIn">
+    <wsdl:part name="parameters" element="tns:MobileNotice" />
+  </wsdl:message>
+  <wsdl:message name="MobileNoticeSoapOut">
+    <wsdl:part name="parameters" element="tns:MobileNoticeResponse" />
+  </wsdl:message>
+  <wsdl:message name="MobileNoticeMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetSiteValueDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSiteValueData" />
+  </wsdl:message>
+  <wsdl:message name="GetSiteValueDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSiteValueDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSiteValueDataMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddDeviceTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:AddDeviceToken" />
+  </wsdl:message>
+  <wsdl:message name="AddDeviceTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:AddDeviceTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddDeviceTokenMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddDeviceToken3SoapIn">
+    <wsdl:part name="parameters" element="tns:AddDeviceToken3" />
+  </wsdl:message>
+  <wsdl:message name="AddDeviceToken3SoapOut">
+    <wsdl:part name="parameters" element="tns:AddDeviceToken3Response" />
+  </wsdl:message>
+  <wsdl:message name="AddDeviceToken3MySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddDeviceToken1SoapIn">
+    <wsdl:part name="parameters" element="tns:AddDeviceToken1" />
+  </wsdl:message>
+  <wsdl:message name="AddDeviceToken1SoapOut">
+    <wsdl:part name="parameters" element="tns:AddDeviceToken1Response" />
+  </wsdl:message>
+  <wsdl:message name="AddDeviceToken1MySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetDayPrimarySoapIn">
+    <wsdl:part name="parameters" element="tns:GetDayPrimary" />
+  </wsdl:message>
+  <wsdl:message name="GetDayPrimarySoapOut">
+    <wsdl:part name="parameters" element="tns:GetDayPrimaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDayPrimaryMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetLast24HourAQISoapIn">
+    <wsdl:part name="parameters" element="tns:GetLast24HourAQI" />
+  </wsdl:message>
+  <wsdl:message name="GetLast24HourAQISoapOut">
+    <wsdl:part name="parameters" element="tns:GetLast24HourAQIResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLast24HourAQIMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="NewEarlyWarningInfo_maiSoapIn">
+    <wsdl:part name="parameters" element="tns:NewEarlyWarningInfo_mai" />
+  </wsdl:message>
+  <wsdl:message name="NewEarlyWarningInfo_maiSoapOut">
+    <wsdl:part name="parameters" element="tns:NewEarlyWarningInfo_maiResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewEarlyWarningInfo_maiMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="NewEarlyWarningInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:NewEarlyWarningInfo" />
+  </wsdl:message>
+  <wsdl:message name="NewEarlyWarningInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:NewEarlyWarningInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewEarlyWarningInfoMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="NewEarlyWarningInfoTop1SoapIn">
+    <wsdl:part name="parameters" element="tns:NewEarlyWarningInfoTop1" />
+  </wsdl:message>
+  <wsdl:message name="NewEarlyWarningInfoTop1SoapOut">
+    <wsdl:part name="parameters" element="tns:NewEarlyWarningInfoTop1Response" />
+  </wsdl:message>
+  <wsdl:message name="NewEarlyWarningInfoTop1MySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMobileMessageAndroidSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMobileMessageAndroid" />
+  </wsdl:message>
+  <wsdl:message name="GetMobileMessageAndroidSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMobileMessageAndroidResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMobileMessageAndroidMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMobileMessageIphoneSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMobileMessageIphone" />
+  </wsdl:message>
+  <wsdl:message name="GetMobileMessageIphoneSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMobileMessageIphoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMobileMessageIphoneMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetNewAirForecastSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNewAirForecast" />
+  </wsdl:message>
+  <wsdl:message name="GetNewAirForecastSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNewAirForecastResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNewAirForecastMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetNewAirForecastIphoneSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNewAirForecastIphone" />
+  </wsdl:message>
+  <wsdl:message name="GetNewAirForecastIphoneSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNewAirForecastIphoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNewAirForecastIphoneMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetNewAirForecastAndroidSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNewAirForecastAndroid" />
+  </wsdl:message>
+  <wsdl:message name="GetNewAirForecastAndroidSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNewAirForecastAndroidResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNewAirForecastAndroidMySoapHeader">
+    <wsdl:part name="MySoapHeader" element="tns:MySoapHeader" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="GetSiteData">
+      <wsdl:input message="tns:GetSiteDataSoapIn" />
+      <wsdl:output message="tns:GetSiteDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDayTrend">
+      <wsdl:input message="tns:GetDayTrendSoapIn" />
+      <wsdl:output message="tns:GetDayTrendSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMonthTrend">
+      <wsdl:input message="tns:GetMonthTrendSoapIn" />
+      <wsdl:output message="tns:GetMonthTrendSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteRank">
+      <wsdl:input message="tns:GetSiteRankSoapIn" />
+      <wsdl:output message="tns:GetSiteRankSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SoftVersion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取android版手机软件最新版本</wsdl:documentation>
+      <wsdl:input message="tns:SoftVersionSoapIn" />
+      <wsdl:output message="tns:SoftVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteAQIData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">站点实时空气质量</wsdl:documentation>
+      <wsdl:input message="tns:GetSiteAQIDataSoapIn" />
+      <wsdl:output message="tns:GetSiteAQIDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewSiteAQIData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">站点实时空气质量-----第二版2013-1-30 张家绮</wsdl:documentation>
+      <wsdl:input message="tns:GetNewSiteAQIDataSoapIn" />
+      <wsdl:output message="tns:GetNewSiteAQIDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteHoursAQIData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">站点实时空气质量-----第三版2013-11-1 张明</wsdl:documentation>
+      <wsdl:input message="tns:GetSiteHoursAQIDataSoapIn" />
+      <wsdl:output message="tns:GetSiteHoursAQIDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAirForecast">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取预报数据</wsdl:documentation>
+      <wsdl:input message="tns:GetAirForecastSoapIn" />
+      <wsdl:output message="tns:GetAirForecastSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHourAQITrend">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">最近24小时站点空气质量趋势</wsdl:documentation>
+      <wsdl:input message="tns:GetHourAQITrendSoapIn" />
+      <wsdl:output message="tns:GetHourAQITrendSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewHourAQITrend">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">最近24小时站点空气质量趋势----带有前后日期2013-2-22</wsdl:documentation>
+      <wsdl:input message="tns:GetNewHourAQITrendSoapIn" />
+      <wsdl:output message="tns:GetNewHourAQITrendSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDayAQITrend">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">最近30天站点空气质量趋势</wsdl:documentation>
+      <wsdl:input message="tns:GetDayAQITrendSoapIn" />
+      <wsdl:output message="tns:GetDayAQITrendSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AQIDaily">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">AQI日报</wsdl:documentation>
+      <wsdl:input message="tns:AQIDailySoapIn" />
+      <wsdl:output message="tns:AQIDailySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EarlyWarningInfo_mai">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">霾预警</wsdl:documentation>
+      <wsdl:input message="tns:EarlyWarningInfo_maiSoapIn" />
+      <wsdl:output message="tns:EarlyWarningInfo_maiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EarlyWarningInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">污染预警</wsdl:documentation>
+      <wsdl:input message="tns:EarlyWarningInfoSoapIn" />
+      <wsdl:output message="tns:EarlyWarningInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EarlyWarningInfoTop1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">污染预警最近一条</wsdl:documentation>
+      <wsdl:input message="tns:EarlyWarningInfoTop1SoapIn" />
+      <wsdl:output message="tns:EarlyWarningInfoTop1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StationList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">站点列表</wsdl:documentation>
+      <wsdl:input message="tns:StationListSoapIn" />
+      <wsdl:output message="tns:StationListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MobileNotice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">手机通知</wsdl:documentation>
+      <wsdl:input message="tns:MobileNoticeSoapIn" />
+      <wsdl:output message="tns:MobileNoticeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteValueData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据站点编号获取站点各指标浓度数据</wsdl:documentation>
+      <wsdl:input message="tns:GetSiteValueDataSoapIn" />
+      <wsdl:output message="tns:GetSiteValueDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDeviceToken">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">增加苹果终端DeviceToken</wsdl:documentation>
+      <wsdl:input message="tns:AddDeviceTokenSoapIn" />
+      <wsdl:output message="tns:AddDeviceTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDeviceToken3">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">增加苹果终端DeviceToken</wsdl:documentation>
+      <wsdl:input message="tns:AddDeviceToken3SoapIn" />
+      <wsdl:output message="tns:AddDeviceToken3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDeviceToken1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">增加Android终端DeviceToken</wsdl:documentation>
+      <wsdl:input message="tns:AddDeviceToken1SoapIn" />
+      <wsdl:output message="tns:AddDeviceToken1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDayPrimary">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取站点最近24小时趋势（首要污染物）</wsdl:documentation>
+      <wsdl:input message="tns:GetDayPrimarySoapIn" />
+      <wsdl:output message="tns:GetDayPrimarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLast24HourAQI">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取站点最近24AQI</wsdl:documentation>
+      <wsdl:input message="tns:GetLast24HourAQISoapIn" />
+      <wsdl:output message="tns:GetLast24HourAQISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewEarlyWarningInfo_mai">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">霾预警</wsdl:documentation>
+      <wsdl:input message="tns:NewEarlyWarningInfo_maiSoapIn" />
+      <wsdl:output message="tns:NewEarlyWarningInfo_maiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewEarlyWarningInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">污染预警</wsdl:documentation>
+      <wsdl:input message="tns:NewEarlyWarningInfoSoapIn" />
+      <wsdl:output message="tns:NewEarlyWarningInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewEarlyWarningInfoTop1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">污染预警最近一条</wsdl:documentation>
+      <wsdl:input message="tns:NewEarlyWarningInfoTop1SoapIn" />
+      <wsdl:output message="tns:NewEarlyWarningInfoTop1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMobileMessageAndroid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">手机信息提示安卓</wsdl:documentation>
+      <wsdl:input message="tns:GetMobileMessageAndroidSoapIn" />
+      <wsdl:output message="tns:GetMobileMessageAndroidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMobileMessageIphone">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">手机信息提示iPhone</wsdl:documentation>
+      <wsdl:input message="tns:GetMobileMessageIphoneSoapIn" />
+      <wsdl:output message="tns:GetMobileMessageIphoneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewAirForecast">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取预报数据</wsdl:documentation>
+      <wsdl:input message="tns:GetNewAirForecastSoapIn" />
+      <wsdl:output message="tns:GetNewAirForecastSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewAirForecastIphone">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取预报数据</wsdl:documentation>
+      <wsdl:input message="tns:GetNewAirForecastIphoneSoapIn" />
+      <wsdl:output message="tns:GetNewAirForecastIphoneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewAirForecastAndroid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取预报数据</wsdl:documentation>
+      <wsdl:input message="tns:GetNewAirForecastAndroidSoapIn" />
+      <wsdl:output message="tns:GetNewAirForecastAndroidSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSiteData">
+      <soap:operation soapAction="http://tempuri.org/GetSiteData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetSiteDataMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDayTrend">
+      <soap:operation soapAction="http://tempuri.org/GetDayTrend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDayTrendMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMonthTrend">
+      <soap:operation soapAction="http://tempuri.org/GetMonthTrend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMonthTrendMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteRank">
+      <soap:operation soapAction="http://tempuri.org/GetSiteRank" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetSiteRankMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SoftVersion">
+      <soap:operation soapAction="http://tempuri.org/SoftVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SoftVersionMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteAQIData">
+      <soap:operation soapAction="http://tempuri.org/GetSiteAQIData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetSiteAQIDataMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewSiteAQIData">
+      <soap:operation soapAction="http://tempuri.org/GetNewSiteAQIData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetNewSiteAQIDataMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteHoursAQIData">
+      <soap:operation soapAction="http://tempuri.org/GetSiteHoursAQIData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetSiteHoursAQIDataMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirForecast">
+      <soap:operation soapAction="http://tempuri.org/GetAirForecast" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAirForecastMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHourAQITrend">
+      <soap:operation soapAction="http://tempuri.org/GetHourAQITrend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetHourAQITrendMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewHourAQITrend">
+      <soap:operation soapAction="http://tempuri.org/GetNewHourAQITrend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetNewHourAQITrendMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDayAQITrend">
+      <soap:operation soapAction="http://tempuri.org/GetDayAQITrend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDayAQITrendMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AQIDaily">
+      <soap:operation soapAction="http://tempuri.org/AQIDaily" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AQIDailyMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EarlyWarningInfo_mai">
+      <soap:operation soapAction="http://tempuri.org/EarlyWarningInfo_mai" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EarlyWarningInfo_maiMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EarlyWarningInfo">
+      <soap:operation soapAction="http://tempuri.org/EarlyWarningInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EarlyWarningInfoMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EarlyWarningInfoTop1">
+      <soap:operation soapAction="http://tempuri.org/EarlyWarningInfoTop1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EarlyWarningInfoTop1MySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StationList">
+      <soap:operation soapAction="http://tempuri.org/StationList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MobileNotice">
+      <soap:operation soapAction="http://tempuri.org/MobileNotice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:MobileNoticeMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteValueData">
+      <soap:operation soapAction="http://tempuri.org/GetSiteValueData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetSiteValueDataMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDeviceToken">
+      <soap:operation soapAction="http://tempuri.org/AddDeviceToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddDeviceTokenMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDeviceToken3">
+      <soap:operation soapAction="http://tempuri.org/AddDeviceToken3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddDeviceToken3MySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDeviceToken1">
+      <soap:operation soapAction="http://tempuri.org/AddDeviceToken1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddDeviceToken1MySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDayPrimary">
+      <soap:operation soapAction="http://tempuri.org/GetDayPrimary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDayPrimaryMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLast24HourAQI">
+      <soap:operation soapAction="http://tempuri.org/GetLast24HourAQI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetLast24HourAQIMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewEarlyWarningInfo_mai">
+      <soap:operation soapAction="http://tempuri.org/NewEarlyWarningInfo_mai" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:NewEarlyWarningInfo_maiMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewEarlyWarningInfo">
+      <soap:operation soapAction="http://tempuri.org/NewEarlyWarningInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:NewEarlyWarningInfoMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewEarlyWarningInfoTop1">
+      <soap:operation soapAction="http://tempuri.org/NewEarlyWarningInfoTop1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:NewEarlyWarningInfoTop1MySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMobileMessageAndroid">
+      <soap:operation soapAction="http://tempuri.org/GetMobileMessageAndroid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMobileMessageAndroidMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMobileMessageIphone">
+      <soap:operation soapAction="http://tempuri.org/GetMobileMessageIphone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMobileMessageIphoneMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewAirForecast">
+      <soap:operation soapAction="http://tempuri.org/GetNewAirForecast" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetNewAirForecastMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewAirForecastIphone">
+      <soap:operation soapAction="http://tempuri.org/GetNewAirForecastIphone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetNewAirForecastIphoneMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewAirForecastAndroid">
+      <soap:operation soapAction="http://tempuri.org/GetNewAirForecastAndroid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetNewAirForecastAndroidMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSiteData">
+      <soap12:operation soapAction="http://tempuri.org/GetSiteData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetSiteDataMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDayTrend">
+      <soap12:operation soapAction="http://tempuri.org/GetDayTrend" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetDayTrendMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMonthTrend">
+      <soap12:operation soapAction="http://tempuri.org/GetMonthTrend" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMonthTrendMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteRank">
+      <soap12:operation soapAction="http://tempuri.org/GetSiteRank" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetSiteRankMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SoftVersion">
+      <soap12:operation soapAction="http://tempuri.org/SoftVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SoftVersionMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteAQIData">
+      <soap12:operation soapAction="http://tempuri.org/GetSiteAQIData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetSiteAQIDataMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewSiteAQIData">
+      <soap12:operation soapAction="http://tempuri.org/GetNewSiteAQIData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetNewSiteAQIDataMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteHoursAQIData">
+      <soap12:operation soapAction="http://tempuri.org/GetSiteHoursAQIData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetSiteHoursAQIDataMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirForecast">
+      <soap12:operation soapAction="http://tempuri.org/GetAirForecast" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAirForecastMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHourAQITrend">
+      <soap12:operation soapAction="http://tempuri.org/GetHourAQITrend" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetHourAQITrendMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewHourAQITrend">
+      <soap12:operation soapAction="http://tempuri.org/GetNewHourAQITrend" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetNewHourAQITrendMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDayAQITrend">
+      <soap12:operation soapAction="http://tempuri.org/GetDayAQITrend" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetDayAQITrendMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AQIDaily">
+      <soap12:operation soapAction="http://tempuri.org/AQIDaily" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AQIDailyMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EarlyWarningInfo_mai">
+      <soap12:operation soapAction="http://tempuri.org/EarlyWarningInfo_mai" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EarlyWarningInfo_maiMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EarlyWarningInfo">
+      <soap12:operation soapAction="http://tempuri.org/EarlyWarningInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EarlyWarningInfoMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EarlyWarningInfoTop1">
+      <soap12:operation soapAction="http://tempuri.org/EarlyWarningInfoTop1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EarlyWarningInfoTop1MySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StationList">
+      <soap12:operation soapAction="http://tempuri.org/StationList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MobileNotice">
+      <soap12:operation soapAction="http://tempuri.org/MobileNotice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:MobileNoticeMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteValueData">
+      <soap12:operation soapAction="http://tempuri.org/GetSiteValueData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetSiteValueDataMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDeviceToken">
+      <soap12:operation soapAction="http://tempuri.org/AddDeviceToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddDeviceTokenMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDeviceToken3">
+      <soap12:operation soapAction="http://tempuri.org/AddDeviceToken3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddDeviceToken3MySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDeviceToken1">
+      <soap12:operation soapAction="http://tempuri.org/AddDeviceToken1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddDeviceToken1MySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDayPrimary">
+      <soap12:operation soapAction="http://tempuri.org/GetDayPrimary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetDayPrimaryMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLast24HourAQI">
+      <soap12:operation soapAction="http://tempuri.org/GetLast24HourAQI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetLast24HourAQIMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewEarlyWarningInfo_mai">
+      <soap12:operation soapAction="http://tempuri.org/NewEarlyWarningInfo_mai" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:NewEarlyWarningInfo_maiMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewEarlyWarningInfo">
+      <soap12:operation soapAction="http://tempuri.org/NewEarlyWarningInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:NewEarlyWarningInfoMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewEarlyWarningInfoTop1">
+      <soap12:operation soapAction="http://tempuri.org/NewEarlyWarningInfoTop1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:NewEarlyWarningInfoTop1MySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMobileMessageAndroid">
+      <soap12:operation soapAction="http://tempuri.org/GetMobileMessageAndroid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMobileMessageAndroidMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMobileMessageIphone">
+      <soap12:operation soapAction="http://tempuri.org/GetMobileMessageIphone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMobileMessageIphoneMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewAirForecast">
+      <soap12:operation soapAction="http://tempuri.org/GetNewAirForecast" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetNewAirForecastMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewAirForecastIphone">
+      <soap12:operation soapAction="http://tempuri.org/GetNewAirForecastIphone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetNewAirForecastIphoneMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewAirForecastAndroid">
+      <soap12:operation soapAction="http://tempuri.org/GetNewAirForecastAndroid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetNewAirForecastAndroidMySoapHeader" part="MySoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="http://219.233.250.38/AQIWS2AppV20/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="http://219.233.250.38/AQIWS2AppV20/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

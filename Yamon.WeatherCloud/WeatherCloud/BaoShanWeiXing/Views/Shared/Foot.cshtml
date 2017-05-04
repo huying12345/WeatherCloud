@@ -1,0 +1,32 @@
+﻿
+        <div class="weui_tabbar">
+    @*<div class="weui_tabbar" style="width:21%;">
+        <a href="/Home/ImgPlay" class="weui_tabbar_item weui_bar_item_on">
+            <div class="weui_tabbar_icon">
+                <span style="" class="iconfonts">&#xe605</span>
+
+            </div>
+            <p class="weui_tabbar_label">首页</p>
+        </a>
+    </div>*@
+            <div data-bind="foreach: lines" class="weui_tabbar foot1-icon">
+                <a data-bind="attr: {href:'/Home/Index1#first-'+NodeID,id:'tabbar-'+NodeID }" class="weui_tabbar_item ">
+                    <div class="weui_tabbar_icon">
+                        <span style="font-size:3.8vh" class="iconfonts " data-bind="html:icon"></span>
+
+                    </div>
+                    <p class="weui_tabbar_label " style="font-size:2.0vh;margin-top:1.8vh;" data-bind="text:NodeName"></p>
+                </a>
+            </div>
+            <div data-bind="foreach: lines" class="weui_tabbar foot2-icon">
+                <a data-bind="attr: {href:'/Home/Index2?IndexType=2#first-'+NodeID,id:'tabbar-'+NodeID }" class="weui_tabbar_item ">
+                    <div class="weui_tabbar_icon">
+                        <span style="font-size:3.8vh" class="iconfonts " data-bind="html:icon"></span>
+
+                    </div>
+                    <p class="weui_tabbar_label " style="font-size:2.0vh;margin-top:1.8vh;" data-bind="text:NodeName"></p>
+                </a>
+            </div>
+</div>
+          
+

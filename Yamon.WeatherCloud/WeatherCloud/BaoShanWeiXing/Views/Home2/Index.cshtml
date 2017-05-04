@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "Layout.cshtml";
+}
+<link href="~/assets/css/index.css" rel="stylesheet" />
+<header class="bar bar-nav">
+  
+    <h1 class="title"></h1>
+    <a class="icon pull-left" href="/home2/index?ParentID=8">
+        <i class="iconfont icon-home"></i>
+    </a>
+    <a class="icon pull-right" href="/home2/index2">
+        <i class="iconfont icon-liebiao"></i>
+    </a>
+</header>
+
+@if (Yamon.Framework.Common.RequestHelper.GetInt("ParentID", 8) == 8)
+{
+    @RenderPage("weather.cshtml")
+}
+<div id="nodePanel">
+    <!--ko foreach: nodes-->
+    <div class="header">
+        <h2 class="second-title" data-bind="text:NodeName"></h2>
+    </div>
+    <div class="weui_grids">
+        <!--ko foreach: children-->
+        <!--ko if: children.length>0-->
+        <div class="header thirdheader">
+            <h3 class="second-title" data-bind="text:NodeName"></h3>
+        </div>
+        <div class="weui_grids" data-bind="foreach: children">
+            <a data-bind='attr:{href:"/home2/show/"+NodeID }' class="weui_grid js_grid" data-id="button">
+                <div class="weui_grid_icon" data-bind="css: { disable: isDataAccess == 0}">
+                    <i data-bind="attr:{class:NodePicUrl}"></i>
+                </div>
+                <p class="weui_grid_label" data-bind="text:NodeName">
+                </p>
+            </a>
+        </div>
+        <!--/ko-->
+        <!--ko if: children.length==0-->
+        <a data-bind='attr:{href:"/home2/show/"+NodeID }' class="weui_grid js_grid" data-id="button">
+            <div class="weui_grid_icon" data-bind="css: { disable: isDataAccess == 0}">
+                <i data-bind="attr:{class:NodePicUrl}"></i>
+            </div>
+            <p class="weui_grid_label" data-bind="text:NodeName">
+            </p>
+        </a>
+        <!--/ko-->
+        <!--/ko-->
+    </div>
+    <!--/ko-->
+</div>
+@section scripts{
+    <script>
+        var parentId=@(Yamon.Framework.Common.RequestHelper.GetInt("ParentID",8));
+        $(function () {
+            var nodeViewModel = new NodeViewModel();
+            ko.applyBindings(nodeViewModel,document.getElementById("nodePanel"));
+            nodeViewModel.init(parentId);
+            $(".weui_tabbar a").attr("class","weui_tabbar_item");
+            $("#tab_"+parentId).attr("class","weui_tabbar_item weui_bar_item_on");
+        });
+    </script>
+<script src="~/assets/js/weatherInfo.js"></script>
+}

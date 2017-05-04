@@ -1,0 +1,143 @@
+﻿@{
+    ViewBag.Title = "导航";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<div class="weui_grids tab-content" data-bind='foreach: lines'>
+    <div role="tabpanel" class="tab-pane active" data-bind="attr: {id:'menu'+NodeID },foreach: children">
+        <div>
+            <div><h4 data-bind="text:NodeName"></h4></div>
+            <div data-bind='foreach: children'>
+                <a data-bind="attr: {href:hrefs }" class="weui_grid js_grid" data-id="button">
+                    <div class="weui_grid_icon">
+                        <img src="~/Static/ImgPlay/Images/head.png" alt="">
+                    </div>
+                    <p class="weui_grid_label" data-bind="text:NodeName">
+
+                    </p>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+ 
+
+</div>*@
+<div class="tab-content panel panel-info" style="border:0px; ">
+    <div class=" panel-heading" style="border:0px;border-bottom:3px solid #D9EDF7 !important; background-color:#fff">
+        <h3  style="font-size:3.5vh">我的收藏</h3>
+    </div>
+    <div class="weui_cells">
+        <div class="weui_cell">
+            <div class="weui_cell_hd" style="background-color:#89D300;border-radius:10px; width:3rem;height:3rem;line-height:3rem;margin-top:10px;" onclick="location.href = '/Home/Station?Type=Img&NodeName=宝山自动站实况&ParentID=8&MenuID=112#NodeID=113'">
+               
+                <a href="/Home/Station?Type=Img&NodeName=宝山自动站实况&ParentID=8&MenuID=112#NodeID=113">
+                <span class="iconfonts" style="color:#fff;font-size:4vh;text-align:center;display:inline-block;width:100%" >&#xe60e</span>
+                </a>
+            </div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <p><a style="font-size:1.1rem;margin-left:5px;" href="/Home/Station?Type=Img&NodeName=宝山自动站实况&ParentID=8&MenuID=112#NodeID=113">气温 </a></p>
+            </div>
+            <div class="weui_cell_ft iconfonts"><a href="/Home/Station?Type=Img&NodeName=宝山自动站实况&ParentID=8&MenuID=112#NodeID=113" style="color:#ccc">&#xe60f</a></div>
+        </div>
+        <div class="weui_cell">
+            <div class="weui_cell_hd" style="background-color:#05D276;border-radius:10px; width:3rem;height:3rem;line-height:3rem;margin-top:10px;" onclick="location.href = '/Home/TyphoonLine?Type=TyphoonLine&NodeName=台风预报&ParentID=151&MenuID=188'">
+                <a href="/Home/TyphoonLine?Type=TyphoonLine&NodeName=台风预报&ParentID=151&MenuID=188">
+                    <span class="iconfonts" style="color:#fff;font-size:4vh;text-align:center;display:inline-block;width:100%">&#xe60a</span>
+                </a>
+                 
+            </div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <p><a style="font-size:1.1rem;margin-left:5px;" href="/Home/TyphoonLine?Type=TyphoonLine&NodeName=台风预报&ParentID=151&MenuID=188">台风路径图 </a></p>
+            </div>
+            <div class="weui_cell_ft iconfonts"><a href="/Home/TyphoonLine?Type=TyphoonLine&NodeName=台风预报&ParentID=151&MenuID=188" style="color:#ccc">&#xe60f</a></div>
+        </div>
+        <div class="weui_cell">
+            <div class="weui_cell_hd" style="background-color:#FF7356;border-radius:10px; width:3rem;height:3rem;line-height:3rem;margin-top:10px;" onclick="location.href = '/Home/Text?Type=Text&NodeName=短中期预报&ParentID=190&MenuID=191'">
+                <a href="/Home/Text?Type=Text&NodeName=短中期预报&ParentID=190&MenuID=191">
+                    <span class="iconfonts" style="color:#fff;font-size:4vh;text-align:center;display:inline-block;width:100%">&#xe609</span>
+                </a>
+                
+            </div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <p><a style="font-size:1.1rem;margin-left:5px;" href="/Home/Text?Type=Text&NodeName=短中期预报&ParentID=190&MenuID=191">气象报告 </a></p>
+            </div>
+            <div class="weui_cell_ft iconfonts"><a href="/Home/Text?Type=Text&NodeName=短中期预报&ParentID=190&MenuID=191" style="color:#ccc">&#xe60f</a></div>
+        </div>
+        </div>
+      
+    </div>
+<div class="tab-content panel panel-info" data-bind='foreach: lines' style="border:0px;">
+
+    <div class=" panel-heading" style="border:0px;border-bottom:3px solid #D9EDF7 !important; background:none;float:left;width:100%; margin-bottom:5px;">
+        <h3  data-bind="text:NodeName,attr:{id:'first-'+NodeID}" style="font-size:3.5vh"></h3>
+</div>
+    <div data-bind="attr: {id:'menu'+NodeID },foreach: children" class="panel-title">
+        <div>
+            <h3 data-bind="text:NodeName" style="font-size:3vh;width:100%;color:#31708f;"></h3>
+            <div data-bind="if: isn=='1'">
+                <div data-bind='foreach: children'>
+                    <span data-bind="if: isn=='1'">
+                        <h3  data-bind="text:NodeName" style="font-size:2.5vh;border:0px;border-bottom:3px solid #D9EDF7 !important;padding:5px;width:100%;color:#31708f"></h3>
+                       
+                            <div class="weui_cells" data-bind='foreach: children' >
+                                <div class="weui_cell weui_cell1" >
+                                    <div class="weui_cell_hd" data-bind="attr: {style:'background-color:'+color+';border-radius:10px; width:3rem;height:3rem;line-height:3rem'}">
+
+                                        <a data-bind="attr: {href:hrefs }">
+                                            <span class="iconfonts" data-bind="html:icons" style="color:#fff;font-size:4vh;text-align:center;display:inline-block;width:100%"></span>
+                                        </a>
+                                    </div>
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <p><a data-bind="attr: {href:hrefs },text:NodeName" style="font-size:1.1rem;width:25px;word-wrap:break-word;line-height:15px;margin-left:5px;display:block;width:100%;"></a></p>
+                                    </div>
+                                    <div class="weui_cell_ft iconfonts"><a data-bind="attr: {href:hrefs }" style="color:#ccc">&#xe60f</a></div>
+                                </div>
+                            </div>
+                        
+                     </span>
+
+                    <span data-bind="if: isn=='0'">
+                        <div class="weui_cells">
+                            <div class="weui_cell">
+                                <div class="weui_cell_hd" data-bind="attr: {style:'background-color:'+color+';border-radius:10px; width:3rem;height:3rem;line-height:3rem'}">
+
+                                    <a data-bind="attr: {href:hrefs }">
+                                        <span class="iconfonts" data-bind="html:icons" style="color:#fff;font-size:4vh;text-align:center;display:inline-block;width:100%"></span>
+                                    </a>
+                                </div>
+                                <div class="weui_cell_bd weui_cell_primary">
+                                    <p><a data-bind="attr: {href:hrefs },text:NodeName" style="font-size:1.1rem;width:25px;word-wrap:break-word;line-height:15px;margin-left:5px;display:block;width:100%;"></a></p>
+                                </div>
+                                <div class="weui_cell_ft iconfonts"><a data-bind="attr: {href:hrefs }" style="color:#ccc">&#xe60f</a></div>
+                            </div>
+                        </div>
+                  
+                    </span>
+
+
+                </div>
+            </div>
+            <span data-bind="if: isn=='0'">
+
+                <div class="weui_cells" data-bind="if: isn=='0'">
+                    <div class="weui_cell">
+                        <div class="weui_cell_hd" data-bind="attr: {style:'background-color:'+color+';border-radius:10px;width:3rem;height:3rem;line-height:3rem'}">
+
+                            <a data-bind="attr: {href:hrefs }">
+                                <span class="iconfonts" data-bind="html:icons" style="color:#fff;font-size:4vh;text-align:center;display:inline-block;width:100%"></span>
+                            </a>
+                        </div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p><a data-bind="attr: {href:hrefs },text:NodeName" style="font-size:1.1rem;width:25px;word-wrap:break-word;line-height:15px;margin-left:5px;display:block;width:100%;"></a></p>
+                        </div>
+                        <div class="weui_cell_ft iconfonts"><a data-bind="attr: {href:hrefs }" style="color:#ccc">&#xe60f</a></div>
+                    </div>
+                </div>
+               
+            </span>
+        </div>
+    </div>
+</div>
+  

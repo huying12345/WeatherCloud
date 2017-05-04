@@ -1,0 +1,142 @@
+﻿@{
+    ViewBag.Title = "雷达卫星";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+@section styles{
+<link href="~/Static/ImgPlay/css/style.css" rel="stylesheet" />
+
+
+<style>
+    .noselect {
+        background-color: white;
+        background: url(../../Static/ImgPlay/Images/noselect.png) repeat;
+    }
+
+    .select {
+        color: #ffffff !important;
+        background: url(../../Static/ImgPlay/Images/select.png) repeat;
+        vertical-align: middle;
+    }
+      .select a{
+        color: #ffffff !important;
+       
+    }
+    #district {
+        border-collapse: collapse;
+    }
+
+        #district td {
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            padding: 3px;
+        }
+
+    #imgshow {
+    }
+
+    .imageinfo {
+        padding: 0px;
+        margin-top: 12px;
+    }
+
+        .imageinfo p {
+            margin: 2px;
+        }
+
+    .headerdiv {
+        height: 35px;
+
+        background: #ffffff url('../../Static/ImgPlay/Images/head.png') repeat-x;
+      
+        font-weight: bold;
+        padding: 10px 3px 5px 5px;
+    }
+
+    body {
+        color: #555555;
+    }
+
+
+
+
+</style>
+
+}
+@section scripts{
+
+<script src="~/Static/echarts/echarts.min.js"></script>
+
+<script src="~/Static/ImgPlay/js/touchswipe.js"></script>
+}
+
+<div style="background-color: #ffffff;  ">
+    @*<div class="headerdiv">
+        <table>
+            <tr>
+
+                <td>
+                    <div style="margin-left:4px;color:#4b6594;">上海海洋气象台<span id="fbsj" class="fbsj">2015年06月02日23点30分</span></div>
+                </td>
+            </tr>
+        </table>
+    </div>*@
+    <div style="width:100%; height:1px;"></div>
+  
+
+    <table cellpadding="0" cellspacing="0" style=" height:20px;" class="station-table" >
+
+        <tr >
+
+            <td class="selecttabicon" id="station-temp" style=" vertical-align:middle;border:2px solid #DDDDDD" align="center" name="1"><a>气温</a></td>
+            <td class="selecttabicon " id="station-rain" style=" vertical-align:middle;border:2px solid #DDDDDD" align="center" name="1"><a>雨量</a></td>
+            <td class="selecttabicon " id="station-wind" style=" vertical-align:middle;border:2px solid #DDDDDD" align="center" name="1"><a>风向风速</a></td>
+            <td class="selecttabicon " id="station-njd" style=" vertical-align:middle;border:2px solid #DDDDDD" align="center" name="1"><a>能见度</a></td>
+            <td class="selecttabicon " id="station-xdsd" style=" vertical-align:middle;border:2px solid #DDDDDD;display:none;" align="center" name="1"><a>相对湿度和风</a></td>
+            <td class="selecttabicon " id="station-dzm" style=" vertical-align:middle;border:2px solid #DDDDDD" align="center" name="1"><a>等值面图</a></td>
+        </tr>
+
+    </table>
+ 
+
+    <p style=" text-align:center;font-weight:bold;font-size:2rem;padding:10px;display:none;" id="nolist">暂无数据</p>
+    <div style="width:100%;height:300px;" id="world-map"></div>
+    <table class="table table-striped " id="station-tables">
+        <thead>
+            <tr>
+                
+                <th class="stationName">站点</th>
+                <th class="station-temp">瞬时气温</th>
+                <th class="station-temp">今日最低温</th>
+                <th class="station-temp">今日最高温</th>
+                <th class="station-wind" style="display:none;">1h最大风速</th>
+                <th class="station-wind" style="display:none;">3h最大风速</th>
+                <th class="station-wind" style="display:none;">6h最大风速</th>
+                <th class="station-wind" style="display:none;">24h最大风速</th>
+                <th class="station-rain" style="display:none;">1h累计雨量</th>
+                <th class="station-rain" style="display:none;">3h累计雨量</th>
+                <th class="station-rain" style="display:none;">6h累计雨量</th>
+                <th class="station-rain" style="display:none;">24h累计雨量</th>
+            </tr>
+        </thead>
+        <tbody data-bind='foreach: stationListArray' id="stationlist">
+            <tr data-bind="attr: {id:station,class:rainhidden}">
+                <td class="stationName" data-bind="text:stationname"></td>
+                <td class="station-temp" data-bind="text:temp">瞬时气温</td>
+                <td class="station-temp" data-bind="text:mintemp24">今日最低温</td>
+                <td class="station-temp" data-bind="text:maxtemp24">今日最高温</td>
+                <td class="station-wind" data-bind="text:windlevel" style="display:none;">1h最大风速</td>
+                <td class="station-wind" data-bind="text:maxwindlevel2" style="display:none;">3h最大风速</td>
+                <td class="station-wind" data-bind="text:maxwindlevel3" style="display:none;">6h最大风速</td>
+                <td class="station-wind" data-bind="text:maxwindlevel24" style="display:none;">24h最大风速</td>
+                <td class="station-rain" data-bind="text:totalrain1" style="display:none;">1h累计雨量</td>
+                <td class="station-rain" data-bind="text:totalrain2" style="display:none;">3h累计雨量</td>
+                <td class="station-rain" data-bind="text:totalrain3" style="display:none;">6h累计雨量</td>
+                <td class="station-rain" data-bind="text:totalrain24" style="display:none;">24h累计雨量</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+

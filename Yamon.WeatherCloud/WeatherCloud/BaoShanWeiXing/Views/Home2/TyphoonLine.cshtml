@@ -1,0 +1,197 @@
+﻿@{
+    ViewBag.Title = "实时台风网";
+
+    Layout = "~/Views/Shared/_TyphoonLayout.cshtml";
+}
+
+@section styles{
+    
+<link href="~/Static/Typhoon/css/leaflet.css" rel="stylesheet" />
+<link href="~/Static/Typhoon/css/TyphoonLine.css" rel="stylesheet" />
+    }
+@section scripts{
+<script src="~/Static/Typhoon/js/Utility.js"></script>
+<script src="~/Static/Typhoon/js/leaflet.js"></script>
+<script src="~/Static/Typhoon/js/typhoon.js"></script>
+
+}
+    <div id="mapid"></div>
+    <div id="tynametitle"></div>
+    <div id="container">
+        <div class="tylegend" id="tylegend" style="display:none;">
+            <p class="tytitl">
+                图例    <i id="tuliclose"></i>
+            </p>
+            <div id="dmcon" class="tylecon">
+                <p class="tylesubcon">
+                    预报台
+                </p>
+                <div>
+                    <ul class="tyleul">
+                        <li><span class="zgline"> ━  </span>中国 </li>
+                        <li><span class="xgline"> ━  </span>中国香港</li>
+                        <li><span class="twline"> ━  </span>中国台湾 </li>
+                        <li><span class="rbline"> ━  </span>日本</li>
+                        <li><span class="usaline"> ━  </span>美国 </li>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+                <p class="tylesubcon">
+                    台风等级
+                </p>
+                <div>
+                    <ul class="tyleul">
+                        <li>
+                            <span class="">
+                                <img src="~/Static/Typhoon/Images/typhoon_03.png" />
+                         
+                            </span>超强台风
+                        </li>
+                        <li>
+                            <span class="">
+                                <img src="~/Static/Typhoon/Images/typhoon_06.png" />
+                               
+                            </span>强台风
+                        </li>
+                        <li>
+                            <span class="">
+                                <img src="~/Static/Typhoon/Images/typhoon_08.png" />
+                               
+                            </span>台风
+                        </li>
+                        <li>
+                            <span class="">
+                                <img src="~/Static/Typhoon/Images/typhoon_10.png" />
+                             
+                            </span>强热带风暴
+                        </li>
+                        <li>
+                            <span class="">
+                                <img src="~/Static/Typhoon/Images/typhoon_12.png" />
+                            </span>热带风暴
+                        </li>
+                        <li>
+                            <span class="">
+                                <img src="~/Static/Typhoon/Images/typhoon_14.png" />
+                        
+                            </span>热带低压
+                        </li>
+                        <li>
+                            <span class="">
+                                <img src="~/Static/Typhoon/Images/typhoon_16.png" />
+                           
+                            </span>无数据
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="typhoontable" style="display:none;">
+            <div>
+                <p>台风信息<i id="tytableclose"></i></p>
+                <div class="currentinfo">
+                    <table id="currentinfo">
+                        <tr class="tablehead">
+                            <td>编号</td>
+                            <td>名称</td>
+                            <td>Name</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <p>实况路径</p>
+                <div class="tytableconroute">
+                    <div>
+                        <table id="info">
+                            <tr class="tablehead">
+                                <td>时间</td>
+                                <td>气压</td>
+                                <td>风力</td>
+                                <td>经度</td>
+                                <td>纬度</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="tablehead">
+                <ul id="tabletab"></ul>
+            </div>
+        </div>
+
+        <div id="tyhistory" style=" display:none; overflow-x:hidden">
+            <div id="tytable">
+                <div style=" font-size:18px;">
+                    <div id="divp" style="height:30px">
+                        <div id="yearshow" style=" float:left" onclick="yearshow()">年份选择<img id="yearimg" src="~/Static/Typhoon/Images/arrow_down.png" style=" position:relative;left:5px" /></div>
+                        <div id="year"></div>
+                    </div>
+                    <!--BEGIN actionSheet-->
+                    <div id="actionSheet_wrap" style="display:none">
+                        <div class="weui_actionsheet" id="weui_actionsheet">
+                            <div class="weui_actionsheet_menu" id="yearlist"></div>
+                        </div>
+                        <div><a id="yearback" onclick="yearback()">返回</a></div>
+                    </div>
+                    <!--END actionSheet-->
+                    <table id="Table1" style="display:none;"></table>
+                </div>
+                <div class="historylist">
+                    <div>
+                        <table id="list">
+                            <tr class="tablehead">
+                                <td></td>
+                                <td>编号</td>
+                                <td>中文名</td>
+                                <td>英文名</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div style="height:60px"><a id="search">查询</a><a id="back">返回</a></div>
+            </div>
+            <div class="weui_dialog_alert" id="dialog2" style="display: none;">
+                <div class="weui_mask"></div>
+                <div class="weui_dialog">
+                    <div class="weui_dialog_hd"><strong class="weui_dialog_title">注意</strong></div>
+                    <div class="weui_dialog_bd">同时最多只能查询三个历史台风记录！</div>
+                    <div class="weui_dialog_ft">
+                        <a href='javascript:alertclose()' class="weui_btn_dialog primary">确定</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @*<div style="position:absolute;bottom:5px;left:10px;z-index:999;color:#222222;font-size:12px;line-height:20px;">
+            <img src="~/Static/Typhoon/Images/smmc.jpg" /><br />
+            <span style="font-family: 微软雅黑;">上海海洋气象台</span>
+        </div>*@
+
+        <div style="position:absolute;bottom:0px;right:0px;z-index:1001;color:#222222;font-size:12px;line-height:20px;padding:5px;"><span style="font-family: 微软雅黑;"></span></div>
+
+        <div id="tftuliShow-icon">
+            <i class="icon-list">图例</i>
+        </div>
+        <div id="toolbarhide"><i id="toolbarshow"><p>更多</p></i></div>
+        <div id="toolbar" class="toolbar" style=" display:none">
+            <i id="toolbarclose"></i>
+            <div id="tflistShow-icon">
+                <i class="icon-list">路径</i>
+            </div>
+            <div id="tfhistoryShow-icon">
+                <i class="icon-list">历史</i>
+            </div>
+        </div>
+        <div id="currentty-icon">
+            <i class="icon-list"></i>
+        </div>
+        <div id="notf" style=" display:none"><img src="~/Static/Typhoon/Images/notf.png" /></div>
+        <p id="currentlat" style=" display:none"></p>
+        <p id="currentlon" style="display: none"></p>
+        <p id="searchtyphoonid" style=" display:none"></p>
+    </div>
+
+
+

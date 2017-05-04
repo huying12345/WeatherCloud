@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{22BC876B-1A11-40A5-B32C-2EA628233E0E}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BaoShanWeiXing</RootNamespace>
+    <AssemblyName>BaoShanWeiXing</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Senparc.Weixin, Version=4.8.0.17723, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\WeiXin\Senparc.Weixin.dll</HintPath>
+    </Reference>
+    <Reference Include="Senparc.Weixin.MP">
+      <HintPath>..\..\Lib\WeiXin\Senparc.Weixin.MP.dll</HintPath>
+    </Reference>
+    <Reference Include="Senparc.Weixin.Open">
+      <HintPath>..\..\Lib\WeiXin\Senparc.Weixin.Open.dll</HintPath>
+    </Reference>
+    <Reference Include="Senparc.Weixin.QY, Version=4.1.10.17725, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\WeiXin\Senparc.Weixin.QY.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.40804.0\lib\net40\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.30506.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.30506.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Yamon.Framework.Common, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Yamon.Framework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Yamon.Framework.DAL, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Yamon.Framework.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Yamon.Framework.DBUtility, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Yamon.Framework.DBUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="Yamon.Framework.DBUtility.SqlServer">
+      <HintPath>..\..\Lib\Yamon.Framework.DBUtility.SqlServer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WeiXinAuthorizeFilter.cs" />
+    <Compile Include="Controllers\Home2Controller.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\WeiXinAuthorizeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="assets\css\base.css" />
+    <Content Include="assets\css\icon.css" />
+    <Content Include="assets\css\index.css" />
+    <Content Include="assets\css\index2.css" />
+    <Content Include="assets\css\Station.css" />
+    <Content Include="assets\css\StationPM.css" />
+    <Content Include="assets\css\show.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\weather.css" />
+    <Content Include="assets\css\weatherInfo.css" />
+    <Content Include="assets\font\demo.css" />
+    <Content Include="assets\font\iconfont.css" />
+    <Content Include="assets\font\iconfont.js" />
+    <Content Include="assets\font\iconfont.svg" />
+    <Content Include="assets\images\bg2.jpg" />
+    <Content Include="assets\images\icon_nav_actionSheet.png" />
+    <Content Include="assets\images\icon_nav_article.png" />
+    <Content Include="assets\images\icon_nav_button.png" />
+    <Content Include="assets\images\icon_nav_calendar.png" />
+    <Content Include="assets\images\icon_nav_cell.png" />
+    <Content Include="assets\images\icon_nav_city.png" />
+    <Content Include="assets\images\icon_nav_datetime.png" />
+    <Content Include="assets\images\icon_nav_dialog.png" />
+    <Content Include="assets\images\icon_nav_icons.png" />
+    <Content Include="assets\images\icon_nav_msg.png" />
+    <Content Include="assets\images\icon_nav_noti.png" />
+    <Content Include="assets\images\icon_nav_panel.png" />
+    <Content Include="assets\images\icon_nav_photo.png" />
+    <Content Include="assets\images\icon_nav_picker.png" />
+    <Content Include="assets\images\icon_nav_progress.png" />
+    <Content Include="assets\images\icon_nav_ptr.png" />
+    <Content Include="assets\images\icon_nav_search_bar.png" />
+    <Content Include="assets\images\icon_nav_select.png" />
+    <Content Include="assets\images\icon_nav_swiper.png" />
+    <Content Include="assets\images\icon_nav_tab.png" />
+    <Content Include="assets\images\icon_nav_toast.png" />
+    <Content Include="assets\images\icon_nav_up.png" />
+    <Content Include="assets\images\pic_article.png" />
+    <Content Include="assets\images\present.png" />
+    <Content Include="assets\images\swiper-1.jpg" />
+    <Content Include="assets\images\swiper-2.jpg" />
+    <Content Include="assets\images\swiper-3.jpg" />
+    <Content Include="assets\images\swiper-4.jpg" />
+    <Content Include="assets\images\vcode.jpg" />
+    <Content Include="assets\js\shstation.js" />
+    <Content Include="assets\js\weatherInfo.js" />
+    <Content Include="assets\js\base.js" />
+    <Content Include="assets\js\bsstation.js" />
+    <Content Include="assets\js\bsstationPM.js" />
+    <Content Include="assets\js\myjs.js" />
+    <Content Include="assets\js\show.js" />
+    <Content Include="assets\libs\fastclick\fastclick.js" />
+    <Content Include="assets\libs\jquery-weui\jquery-weui.css" />
+    <Content Include="assets\libs\jquery-weui\jquery-weui.js" />
+    <Content Include="assets\libs\jquery-weui\jquery-weui.min.css" />
+    <Content Include="assets\libs\jquery-weui\jquery-weui.min.js" />
+    <Content Include="assets\libs\jquery\jquery.min.js" />
+    <Content Include="assets\libs\knockout\knockout.js" />
+    <Content Include="assets\libs\knockout\knockout.validation.min.js" />
+    <Content Include="assets\libs\swiper\swiper.js" />
+    <Content Include="assets\libs\swiper\swiper.min.js" />
+    <Content Include="assets\libs\weui\weui.css" />
+    <Content Include="assets\libs\weui\weui.min.css" />
+    <Content Include="assets\libs\zepto\zepto.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Static\artTemplate\template.js" />
+    <Content Include="Static\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Static\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Static\bootstrap\css\bootstrap.css" />
+    <Content Include="Static\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Static\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Static\bootstrap\js\bootstrap.js" />
+    <Content Include="Static\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Static\bootstrap\js\npm.js" />
+    <Content Include="Static\echarts\echarts.min.js" />
+    <Content Include="Static\Home\css\show.css" />
+    <Content Include="Static\Home\css\station.css" />
+    <Content Include="Static\Home\css\style.css" />
+    <Content Include="Static\Home\css\Index1.css" />
+    <Content Include="Static\Home\css\Index.css" />
+    <Content Include="Static\Home\Images\g.png" />
+    <Content Include="Static\Home\Images\icon.png" />
+    <Content Include="Static\Home\Images\雨.jpg" />
+    <Content Include="Static\Home\js\homepage.js" />
+    <Content Include="Static\Home\js\jquery.form.js" />
+    <Content Include="Static\Home\js\jquery.min.js" />
+    <Content Include="Static\Home\js\jquery.query.js" />
+    <Content Include="Static\Home\js\jquery.tablesorter.js" />
+    <Content Include="Static\Home\js\json2.js" />
+    <Content Include="Static\Home\js\PM.js" />
+    <Content Include="Static\Home\js\public.js" />
+    <Content Include="Static\Home\js\show.js" />
+    <Content Include="Static\images\kq.png" />
+    <Content Include="Static\images\qy.png" />
+    <Content Include="Static\images\sd.png" />
+    <Content Include="Static\images\wind.png" />
+    <Content Include="Static\ImgPlay\css\style.css" />
+    <Content Include="Static\ImgPlay\Images\head.png" />
+    <Content Include="Static\ImgPlay\Images\next.png" />
+    <Content Include="Static\ImgPlay\Images\nmchdpt-001_201609211324.PNG" />
+    <Content Include="Static\ImgPlay\Images\noselect.png" />
+    <Content Include="Static\ImgPlay\Images\pause.png" />
+    <Content Include="Static\ImgPlay\Images\play.png" />
+    <Content Include="Static\ImgPlay\Images\previous.png" />
+    <Content Include="Static\ImgPlay\Images\select.png" />
+    <Content Include="Static\ImgPlay\js\imageshow.js" />
+    <Content Include="Static\ImgPlay\js\tabicon.js" />
+    <Content Include="Static\ImgPlay\js\touchswipe.js" />
+    <Content Include="Static\jquery-weui-build\css\demos.css" />
+    <Content Include="Static\jquery-weui-build\css\jquery-weui.css" />
+    <Content Include="Static\jquery-weui-build\css\jquery-weui.min.css" />
+    <Content Include="Static\jquery-weui-build\css\swiper-3.4.0.min.css" />
+    <Content Include="Static\jquery-weui-build\css\weui.css" />
+    <Content Include="Static\jquery-weui-build\css\weui.min.css" />
+    <Content Include="Static\jquery-weui-build\js\city-picker.js" />
+    <Content Include="Static\jquery-weui-build\js\city-picker.min.js" />
+    <Content Include="Static\jquery-weui-build\js\jquery-2.1.4.js" />
+    <Content Include="Static\jquery-weui-build\js\jquery-weui.js" />
+    <Content Include="Static\jquery-weui-build\js\jquery-weui.min.js" />
+    <Content Include="Static\jquery-weui-build\js\swiper.js" />
+    <Content Include="Static\jquery-weui-build\js\swiper.min.js" />
+    <Content Include="Static\jquery-weui-build\js\zepto.js" />
+    <Content Include="Static\knockout\knockout.js" />
+    <Content Include="Static\knockout\knockout.validation.min.js" />
+    <Content Include="Static\Subscribe\Images\1.png" />
+    <Content Include="Static\Subscribe\js\Subscribe.js" />
+    <Content Include="Static\Typhoon\css\leaflet.css" />
+    <Content Include="Static\Typhoon\css\TyphoonLine.css" />
+    <Content Include="Static\Typhoon\Images\arrow_down.png" />
+    <Content Include="Static\Typhoon\Images\hour24.png" />
+    <Content Include="Static\Typhoon\Images\hour48.png" />
+    <Content Include="Static\Typhoon\Images\notf.png" />
+    <Content Include="Static\Typhoon\Images\n_01_v4.png" />
+    <Content Include="Static\Typhoon\Images\n_02_v3.png" />
+    <Content Include="Static\Typhoon\Images\n_03_v3.png" />
+    <Content Include="Static\Typhoon\Images\n_04_v1.png" />
+    <Content Include="Static\Typhoon\Images\n_05.png" />
+    <Content Include="Static\Typhoon\Images\n_06.png" />
+    <Content Include="Static\Typhoon\Images\n_07.png" />
+    <Content Include="Static\Typhoon\Images\n_08.png" />
+    <Content Include="Static\Typhoon\Images\rotate.gif" />
+    <Content Include="Static\Typhoon\Images\smmc.jpg" />
+    <Content Include="Static\Typhoon\Images\typhoon_03.png" />
+    <Content Include="Static\Typhoon\Images\typhoon_06.png" />
+    <Content Include="Static\Typhoon\Images\typhoon_08.png" />
+    <Content Include="Static\Typhoon\Images\typhoon_10.png" />
+    <Content Include="Static\Typhoon\Images\typhoon_12.png" />
+    <Content Include="Static\Typhoon\Images\typhoon_14.png" />
+    <Content Include="Static\Typhoon\Images\typhoon_16.png" />
+    <Content Include="Static\Typhoon\Images\v_01_v3.png" />
+    <Content Include="Static\Typhoon\js\leaflet.js" />
+    <Content Include="Static\Typhoon\js\typhoon.js" />
+    <Content Include="Static\Typhoon\js\Utility.js" />
+    <Content Include="Static\zepto\css\reset.css" />
+    <Content Include="Static\zepto\css\widget\navigator\navigator.css" />
+    <Content Include="Static\zepto\css\widget\navigator\navigator.default.css" />
+    <Content Include="Static\zepto\css\widget\navigator\navigator.iscroll.css" />
+    <Content Include="Static\zepto\css\widget\navigator\navigator.iscroll.default.css" />
+    <Content Include="Static\zepto\js\widget\navigator.iscroll.js" />
+    <Content Include="Static\zepto\js\widget\navigator.js" />
+    <Content Include="Static\zepto\js\zepto.extend.js" />
+    <Content Include="Static\zepto\js\zepto.iscroll.js" />
+    <Content Include="Static\zepto\js\zepto.js" />
+    <Content Include="Static\zepto\js\zepto.ui.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Static\bootstrap\css\bootstrap-theme.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Static\bootstrap\css\bootstrap.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Static\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Static\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Static\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Static\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Product.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\ImgPlay.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index1.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Text.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_TyphoonLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Error.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Typhoon\Yamon.Module.Typhoon.DAL\Yamon.Module.Typhoon.DAL.csproj">
+      <Project>{d6523935-7c9a-45ae-bd34-d7d12a91e152}</Project>
+      <Name>Yamon.Module.Typhoon.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Typhoon\Yamon.Module.Typhoon.WebApi\Yamon.Module.Typhoon.WebApi.csproj">
+      <Project>{84ecef30-ea86-4e2d-abe2-10b316b15c43}</Project>
+      <Name>Yamon.Module.Typhoon.WebApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UCenter\Yamon.Module.UCenter.DAL\Yamon.Module.UCenter.DAL.csproj">
+      <Project>{70153d81-814a-4e37-8b1d-104cc038649a}</Project>
+      <Name>Yamon.Module.UCenter.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UCenter\Yamon.Module.UCenter.Entity\Yamon.Module.UCenter.Entity.csproj">
+      <Project>{61269d27-dbef-4ee3-90a5-8aa003255aa5}</Project>
+      <Name>Yamon.Module.UCenter.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Weather\Yamon.Module.Weather.DAL\Yamon.Module.Weather.DAL.csproj">
+      <Project>{2fe7ab09-be57-4fe5-a89e-21cad9848094}</Project>
+      <Name>Yamon.Module.Weather.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Weather\Yamon.Module.Weather.Entity\Yamon.Module.Weather.Entity.csproj">
+      <Project>{96698535-c0a0-4bfc-9b2c-5a81fd5b6e3d}</Project>
+      <Name>Yamon.Module.Weather.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Weather\Yamon.Module.Weather.WebApi\Yamon.Module.Weather.WebApi.csproj">
+      <Project>{8795b30f-5064-410f-9aa9-57be932afa16}</Project>
+      <Name>Yamon.Module.Weather.WebApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Weather\Yamon.Module.Weather.Web\Yamon.Module.Weather.Web.csproj">
+      <Project>{628d41d1-44b9-41dd-aa74-20eb227ddadd}</Project>
+      <Name>Yamon.Module.Weather.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WeiXin\Yamon.Module.WeiXin.Web\Yamon.Module.WeiXin.Web.csproj">
+      <Project>{f64e35ea-871d-49ea-a802-0436e83ecb4d}</Project>
+      <Name>Yamon.Module.WeiXin.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WeiXin\Yamon.Monitor.WeixinMP.CommonService\Yamon.Monitor.WeixinMP.CommonService.csproj">
+      <Project>{ccd291e9-16fa-4b53-b032-ebd3f659567b}</Project>
+      <Name>Yamon.Monitor.WeixinMP.CommonService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zdz\Yamon.Module.zdz.DAL\Yamon.Module.zdz.DAL.csproj">
+      <Project>{fd814a9d-061d-417c-b1dd-1748a36ed6f8}</Project>
+      <Name>Yamon.Module.zdz.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zdz\Yamon.Module.zdz.WebApi\Yamon.Module.zdz.WebApi.csproj">
+      <Project>{24025061-627c-44ab-80fb-52fe9058bec5}</Project>
+      <Name>Yamon.Module.zdz.WebApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Foot.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Top.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout1.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="client.config" />
+    <Content Include="assets\font\iconfont.ttf" />
+    <Content Include="assets\font\iconfont.woff" />
+    <Content Include="assets\font\iconfont.eot" />
+    <None Include="Properties\PublishProfiles\public.pubxml" />
+    <Content Include="Views\Home\Station.cshtml" />
+    <Content Include="Views\Home\StationImgPlay.cshtml" />
+    <Content Include="Views\Home\StationPM.cshtml" />
+    <Content Include="Views\Home\Index2.cshtml" />
+    <Content Include="Views\Home\homepage.cshtml" />
+    <Content Include="Views\Home2\Index.cshtml" />
+    <Content Include="Views\Home2\Layout.cshtml" />
+    <Content Include="Views\Home2\Index2.cshtml" />
+    <Content Include="Views\Home2\Show.cshtml" />
+    <Content Include="Views\Home2\Station.cshtml" />
+    <Content Include="Views\Home2\StationPM.cshtml" />
+    <Content Include="Views\Home2\ShowLayout.cshtml" />
+    <Content Include="Views\Home2\BsStation.cshtml" />
+    <Content Include="Views\Home2\PMStation.cshtml" />
+    <Content Include="Views\Home2\Doc.cshtml" />
+    <Content Include="Views\Home2\weather.cshtml" />
+    <Content Include="Views\Home2\weatherInfo.cshtml" />
+    <Content Include="Views\Home2\Text.cshtml" />
+    <Content Include="Views\Home2\TyphoonLine.cshtml" />
+    <Content Include="Views\Home2\ShStation.cshtml" />
+    <Content Include="Views\Home2\ShShowstation.cshtml" />
+    <Content Include="Views\Home2\ShowShStation.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>5416</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:5416/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

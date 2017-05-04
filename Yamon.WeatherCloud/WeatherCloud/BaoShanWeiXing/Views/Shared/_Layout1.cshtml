@@ -1,0 +1,78 @@
+﻿@using Yamon.Framework.Common
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta http-equiv="pragma" content="no-cache">
+    <!-- HTTP 1.0 -->
+    <meta http-equiv="cache-control" content="no-cache">
+    <!-- Prevent caching at the proxy server -->
+    <meta http-equiv="expires" content="0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Static/jquery-weui-build/css/weui.css" rel="stylesheet" />
+    <link href="~/Static/jquery-weui-build/css/jquery-weui.css" rel="stylesheet" />
+    <link href="~/Static/jquery-weui-build/css/demos.css" rel="stylesheet" />
+    <link href="~/Static/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Static/Home/css/Index.css" rel="stylesheet" />
+    @RenderSection("styles", required: false)
+    <style>
+        .shik {
+            float: left;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="weui_tab">
+        <div style="text-align:center;" id="title">
+            <h4 id="Title1" style="font-size:20px;">导航</h4>
+            <a href="/Home/Index1"><span style="" class="shik">&#xe608</span></a>
+
+            <a href="/Home/Index1"><span style="" id="left-hidess" class="iconfont">&#xe608</span></a>
+            <span style="display:none;left:86%" id="left-hides" class="iconfont">&#xe600</span>
+            <span id="right-hides" class="iconfont" style="left:86%;">&#xe600</span>
+        </div>
+
+        <div class="weui_tab_bd" style="height:86vh;">
+            <div class="center">
+                <div class="" id="Index-left" style="display:none;">
+                    <ul class="nav nav-tabs tables1" role="tablist" id="myTab" style="border:0px ;" data-bind='foreach: lines2'>
+                        <li role="presentation" class="Alert">
+                            <a data-bind="attr: {href:hrefs}"><span data-bind="text:NodeName"></span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12" id="Index-Content" style="padding-right:0px;padding-left:0px;">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+
+        @RenderPage("Foot.cshtml")
+    </div>
+    <script src="~/Static/Home/js/jquery.min.js"></script>
+
+    <script src="~/Static/jquery-weui-build/js/jquery-weui.js"></script>
+    <script src="~/Static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Static/Home/js/jquery.query.js"></script>
+    <script src="~/Static/knockout/knockout.js"></script>
+
+
+    <script src="~/Static/Home/js/public.js"></script>
+
+    <script src="~/Static/ImgPlay/js/tabicon.js"></script>
+    <script src="~/Static/ImgPlay/js/imageshow.js"></script>
+    <script>
+        var userId = @(CookieHelper.GetCookieInt("UserID"));
+        var nodeId = 0;
+    jQuery(function () {
+        menu1();
+    })
+</script>
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+﻿body {
+    font-family:"微软雅黑";
+    color:#fff;
+}
+.weui_navbar ul{
+    width:100%;
+}
+.weui_navbar{
+    height:40px;
+    line-height:40px;
+    color:#000;
+    font-size:16px;
+}
+.weui_navbar a{
+    color:rgb(88, 82, 82);
+    font-size:20px!important;
+}
+.weui_navbar ul li:first-child{
+    text-align:left;
+    padding-left:20px;
+}
+.weui_navbar ul li:last-child{
+    text-align:right;
+    padding-right:20px;
+}
+.weui_navbar ul li a,.weui_navbar ul li:nth-child(2){
+    font-size:20px
+}
+ul li{
+    list-style:none;
+}
+.weui_navbar ul li{
+    text-align:center;
+}
+.weui_navbar + .weui_tab_bd {
+    background-image:-webkit-linear-gradient(top, rgb(56, 127, 152), rgb(41, 75, 84));
+    color: #fff;
+    height:100%;
+}
+.weather tr td{
+    font-size:16px;
+}
+.weather tr:nth-child(2) td{
+   font-size:40px !important;
+}
+.weather tr td{
+    text-align:left;
+    padding-left:20px;
+}
+.weather ul{
+    width:100%;
+}
+.weather ul li{
+    display:inline-block;
+}
+.weather ul li:first-child{
+    float:left;
+    padding-left:20px;
+    padding-top:4px;
+    font-size:14px;
+}
+.weather ul li:last-child{
+    float:right;
+    margin-right:10px;
+    background: rgba(0, 0, 0, 0.19);
+    padding: 0px 8px 3px 8px;
+    border-radius: 33px;
+    font-size:14px;
+}
+.weather ul li i{
+   border-radius: 50%;
+   background: #E89037;
+   padding:3px;
+   font-size:10px;
+}
+.weather table span:first-child{
+    font-size:14px;
+}
+.weather{
+    height:120px;
+    margin-top:20px;
+    border-bottom:1px solid rgba(255, 255, 255, 0.34);
+    padding-bottom:10px;
+}
+/*未来十天天气详情*/
+.swiper-slide{
+    width:100%;
+    float:left;
+    display:block;
+}
+/*曲线图*/
+#main{
+    height:250px;
+    width:226%;
+    top:-30px;
+    left:-13%
+}
+/*slide*/
+.swiper-container,.swiper-container table tr,.swiper-container table {
+    width:100%;
+}
+.swiper-container table tr{
+    height:30px;
+}
+.swiper-container table tr td{
+   width:20%;
+   text-align:center;
+   word-break:break-all;
+   font-size:16px;
+}
+
+ 

@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "雷达卫星";
+    Layout = "ShowLayout.cshtml";
+}
+<div class="show_content">
+    <span id="show_time" class="show_time">2016年11月02日23点30分</span>
+
+    <div class="show_map">
+        <pre  id="input_hidden"></pre>
+    </div>
+  
+    <div id="Subscribe" class="Subscribe">
+        <!--ko ifnot: issubscribe-->
+        <span data-bind="click:addSubscribeNode">立即收藏</span>
+        <!--/ko-->
+        <span data-bind="visible:issubscribe,click:removeSubscribeNode">取消收藏</span>
+    </div>
+</div>
+<style type="text/css">
+    pre{
+white-space: pre-wrap;       
+white-space: -moz-pre-wrap;  
+white-space: -pre-wrap;      
+white-space: -o-pre-wrap;    
+word-wrap: break-word;     
+ text-align: left;  
+}
+</style>
